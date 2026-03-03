@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import { ImageWithFallback } from "../components/figma/ImageWithFallback";
 import { LEADERSHIP_HERO, LEADER_SANJAY, LEADER_ALOKNATH, LEADER_PIYUSH, LEADER_BIKRAMJIT, LEADER_KURT, LEADER_MIKKO, LEADER_VASTA } from "../assets/images";
 
@@ -7,6 +7,8 @@ const leaders = [
     img: LEADER_SANJAY,
     role: "Managing Partner, Australia",
     name: "Sanjay Krishnaa",
+    phone: "+61 405 525 048",
+    email: "sanjay.krishnaa@quantumtech-hub.com",
     bio: [
       "Sanjay is a global strategic business & technology leader with over 20 years experience in consulting, advising & successfully building & running scale businesses in diverse industries.",
       "He demonstrated repeated success in leading design, development & implementation of corporate strategy, business transformation, leading inorganic growth, driving market-making impact & sustainable successful business outcome.",
@@ -16,6 +18,8 @@ const leaders = [
     img: LEADER_ALOKNATH,
     role: "Senior Partner, India",
     name: "Dr. Aloknath De",
+    phone: null,
+    email: "info@quantumtech-hub.com",
     bio: [
       "Dr. De is a distinguished leader with over 30 years of extensive in technology and engineering space. He has been driving Cyber-Physical Systems (CPS) design that imbibes core tech: AI, Trusted Tech, IoT, Cobotics and 6G (ATIC6).",
       "Dr. De has been recognized in Top 50 Global CTOs. He received Graham Bell Prize (Canada), IETE Memorial Awards, IEEE MGA Innovation Award, IDC Insights Award, Vanguard Intrapreneurship Award, Nasscom AI Game-Changer Award; and also IESA for 'Innovative Product', Zinnov 'Intrapreneur of the Year', Assocham 'Tech Leader of the Year' and TechCircle for 'Business Transformation' among others.",
@@ -25,6 +29,8 @@ const leaders = [
     img: LEADER_PIYUSH,
     role: "Senior Partner, India",
     name: "Piyush Tandon",
+    phone: "+91 89782 66886",
+    email: "piyush.tandon@quantumtech-hub.com",
     bio: [
       "Piyush is an accomplished business leader and a visionary strategist with over 3 decades of global experience in spearheading Strategy, Business Innovation, Product Management and Digital Transformation initiatives of leading Product Engineering and Technology Services companies across APAC, EMEA & North America.",
       "Piyush brings extensive cross industry knowledge & experience of working with customers from 25+ countries across Communications, Utilities, Transportation, Automobile, FMCG & Healthcare industry segments.",
@@ -33,7 +39,9 @@ const leaders = [
   {
     img: LEADER_BIKRAMJIT,
     role: "Senior Partner, Europe",
-    name: "Bikramjit Paul Chaudhary",
+    name: "Bikramjit Paul Choudhury",
+    phone: "+49 173 5239318",
+    email: "bikramjitpaul.choudhury@quantumtech-hub.com",
     bio: [
       "Bikram is a global strategic business & technology leader with over 20 years experience in consulting, advising & successfully building & running scale businesses in diverse industries.",
       "He demonstrated repeated success in leading design, development & implementation of corporate strategy, business transformation, leading inorganic growth, driving market-making impact & sustainable successful business outcome.",
@@ -43,6 +51,8 @@ const leaders = [
     img: LEADER_KURT,
     role: "Senior Partner, USA & Canada",
     name: "Kurt Simmons",
+    phone: "+1 (480) 544-3613",
+    email: "kurt.simmons@quantumtech-hub.com",
     bio: [
       "Kurt brings more than two decades of global experience leading enterprise sales, partner ecosystems, and large‑scale technology transformation. He has held senior and executive leadership roles across major global technology and engineering organisations, including Ericsson, Xerox, Cyient, and United Technologies—experience that deeply strengthens our advisory capability.",
       "His ability to drive growth, shape complex programs, and turn digital, AI, cloud, and data strategies into measurable outcomes makes him a powerful addition to our leadership team.",
@@ -52,6 +62,8 @@ const leaders = [
     img: LEADER_MIKKO,
     role: "Senior Partner, Europe",
     name: "Mikko Mattheiszen",
+    phone: "+358 50 3651767",
+    email: "Mikko.Mattheiszen@quantumtech-hub.com",
     bio: [
       "Mikko is a dynamic and strategic operations and commercial leader with over 25 years of experience driving transformation, pricing strategy, and business performance at a global scale within telecommunications and electrical engineering corporations like Nokia, Siemens, ABB and Alcatel.",
       "He has consistently led complex organizational change initiatives, cross-functional virtual teams, and commercial excellence programs at Nokia. Mikko is known for shaping high-impact strategies, aligning business operations, and driving measurable value in highly competitive technology sectors.",
@@ -61,6 +73,8 @@ const leaders = [
     img: LEADER_VASTA,
     role: "Senior Partner, Middle East",
     name: "Vatsa Kalyanasundaram",
+    phone: null,
+    email: "info@quantumtech-hub.com",
     bio: [
       "Vatsa is a strategic leader with over 25 years of experience in telecommunications and digital transformation. He has held senior and executive leadership roles across major global technology and engineering organisations, including Ericsson, Xerox, Cyient, and United Technologies—experience that deeply strengthens our advisory capability.",
       "His ability to drive growth, shape complex programs, and turn digital, AI, cloud, and data strategies into measurable outcomes makes him a powerful addition to our leadership team.",
@@ -68,27 +82,46 @@ const leaders = [
   },
 ];
 
+const CARD_WIDTH = 380;
+const GAP = 48;
+
 export function LeadershipPage() {
   const [current, setCurrent] = useState(0);
-  const [direction, setDirection] = useState<"left" | "right" | null>(null);
-  const [animating, setAnimating] = useState(false);
+  const [visibleCount, setVisibleCount] = useState(4);
+  const trackRef = useRef<HTMLDivElement>(null);
+  const containerRef = useRef<HTMLDivElement>(null);
 
   const total = leaders.length;
+  const maxCurrent = Math.max(0, total - visibleCount);
 
-  function navigate(dir: "left" | "right") {
-    if (animating) return;
-    setDirection(dir);
-    setAnimating(true);
-    setTimeout(() => {
-      setCurrent((prev) =>
-        dir === "right" ? (prev + 1) % total : (prev - 1 + total) % total
-      );
-      setAnimating(false);
-    }, 350);
-  }
+  useEffect(() => {
+    const updateVisible = () => {
+      const w = containerRef.current?.offsetWidth ?? 1200;
+      const w4 = 4 * CARD_WIDTH + 3 * GAP;
+      const w3 = 3 * CARD_WIDTH + 2 * GAP;
+      const w2 = 2 * CARD_WIDTH + GAP;
+      if (w < w2) setVisibleCount(1);
+      else if (w < w3) setVisibleCount(2);
+      else if (w < w4) setVisibleCount(3);
+      else setVisibleCount(4);
+    };
+    updateVisible();
+    const ro = new ResizeObserver(updateVisible);
+    if (containerRef.current) ro.observe(containerRef.current);
+    return () => ro.disconnect();
+  }, []);
 
-  const leader = leaders[current];
-  const pad = (n: number) => String(n).padStart(2, "0");
+
+  useEffect(() => {
+    const idx = Math.min(current, maxCurrent);
+    const offset = idx * (CARD_WIDTH + GAP);
+    if (trackRef.current) {
+      trackRef.current.style.transform = `translateX(-${offset}px)`;
+    }
+  }, [current, maxCurrent]);
+
+  const goPrev = () => setCurrent((p) => Math.max(0, p - 1));
+  const goNext = () => setCurrent((p) => Math.min(maxCurrent, p + 1));
 
   return (
     <div className="bg-black min-h-screen">
@@ -121,86 +154,86 @@ export function LeadershipPage() {
         </div>
       </section>
 
-      {/* ── Second section: carousel ── */}
-      <section className="bg-[#fdfbe8] min-h-screen flex flex-col">
-        <div className="flex-1 grid md:grid-cols-2 min-h-screen">
-
-          {/* Left: photo */}
-          <div className="relative overflow-hidden bg-gray-200 min-h-[50vh] md:min-h-screen">
-            <div
-              className="absolute inset-0 transition-opacity duration-350 ease-in-out"
-              style={{ opacity: animating ? 0 : 1 }}
-            >
-              <ImageWithFallback
-                src={leader.img}
-                alt={leader.name}
-                className="w-full h-full object-cover object-top"
-              />
-            </div>
+      {/* ── Second section: sliding carousel (3–4 visible, move one by one) ── */}
+      <section className="bg-[#fdfbe8] py-16 md:py-24 px-6 md:px-10 lg:px-16 flex flex-col items-center">
+        <div ref={containerRef} className="max-w-7xl w-full flex flex-col items-center">
+          <div
+            className="overflow-hidden mx-auto"
+            style={{
+              width: visibleCount * CARD_WIDTH + (visibleCount - 1) * GAP,
+              maxWidth: "100%",
+            }}
+          >
+          <div
+            ref={trackRef}
+            className="flex transition-transform duration-500 ease-out"
+            style={{ width: total * CARD_WIDTH + (total - 1) * GAP, gap: GAP }}
+          >
+            {leaders.map((leader, i) => (
+              <div
+                key={i}
+                className="flex-shrink-0 w-[380px] flex flex-col bg-white rounded-xl overflow-hidden shadow-sm border border-black/5"
+              >
+                <div className="aspect-square w-full overflow-hidden bg-gray-100">
+                  <ImageWithFallback
+                    src={leader.img}
+                    alt={leader.name}
+                    className="w-full h-full object-cover object-top"
+                  />
+                </div>
+                <div className="flex flex-col flex-1 p-6 md:p-8">
+                  <p className="text-black/50 text-xs uppercase tracking-widest mb-1">
+                    {leader.role}
+                  </p>
+                  <h3 className="font-serif text-xl md:text-2xl font-normal text-black leading-tight mb-2">
+                    {leader.name}
+                  </h3>
+                  {(leader.phone || leader.email) && (
+                    <div className="space-y-0.5 mb-3 text-[10px] md:text-xs text-black/70">
+                      {leader.phone && <p>{leader.phone}</p>}
+                      {leader.email && (
+                        <a href={`mailto:${leader.email}`} className="text-black/70 hover:text-black hover:underline break-all">
+                          {leader.email}
+                        </a>
+                      )}
+                    </div>
+                  )}
+                  <div className="space-y-2 text-black/80 text-[10px] md:text-xs leading-relaxed max-w-none">
+                    {leader.bio.map((para, j) => (
+                      <p key={j}>{para}</p>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
           </div>
 
-          {/* Right: info + navigation */}
-          <div className="flex flex-col justify-between py-14 md:py-20 px-8 md:px-12 lg:px-16">
-
-            {/* Counter */}
-            <div className="text-black/40 text-sm font-mono tracking-widest mb-8">
-              {pad(current + 1)} / {pad(total)}
-            </div>
-
-            {/* Leader info */}
-            <div
-              className="flex-1 flex flex-col justify-center transition-opacity duration-350 ease-in-out"
-              style={{ opacity: animating ? 0 : 1 }}
+          {/* Arrow navigation */}
+          <div className="flex items-center gap-4 mt-10 md:mt-14">
+            <button
+              onClick={goPrev}
+              disabled={current === 0}
+              className="w-12 h-12 rounded-full border border-black/30 flex items-center justify-center text-black hover:bg-black hover:text-[#fdfbe8] transition-colors duration-300 disabled:opacity-40 disabled:cursor-not-allowed"
+              aria-label="Previous"
             >
-              <p className="text-black/50 text-sm uppercase tracking-widest mb-3">
-                {leader.role}
-              </p>
-              <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl font-normal text-black leading-[1.1] tracking-tight mb-8 md:mb-10">
-                {leader.name}
-              </h2>
-              <div className="space-y-4 text-black/80 leading-relaxed max-w-lg">
-                {leader.bio.map((para, i) => (
-                  <p key={i}>{para}</p>
-                ))}
-              </div>
-            </div>
-
-            {/* Arrow navigation */}
-            <div className="flex items-center gap-4 mt-10 md:mt-14">
-              <button
-                onClick={() => navigate("left")}
-                disabled={animating}
-                className="w-12 h-12 rounded-full border border-black/30 flex items-center justify-center text-black hover:bg-black hover:text-[#fdfbe8] transition-colors duration-300 disabled:opacity-40"
-                aria-label="Previous"
-              >
-                <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
-                  <path d="M11 3L5 9L11 15" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-                </svg>
-              </button>
-              <button
-                onClick={() => navigate("right")}
-                disabled={animating}
-                className="w-12 h-12 rounded-full border border-black/30 flex items-center justify-center text-black hover:bg-black hover:text-[#fdfbe8] transition-colors duration-300 disabled:opacity-40"
-                aria-label="Next"
-              >
-                <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
-                  <path d="M7 3L13 9L7 15" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-                </svg>
-              </button>
-
-              {/* Dot indicators */}
-              <div className="flex items-center gap-2 ml-4">
-                {leaders.map((_, i) => (
-                  <button
-                    key={i}
-                    onClick={() => { if (!animating) { setDirection(i > current ? "right" : "left"); setAnimating(true); setTimeout(() => { setCurrent(i); setAnimating(false); }, 350); } }}
-                    className={`rounded-full transition-all duration-300 ${i === current ? "w-6 h-2 bg-black" : "w-2 h-2 bg-black/25 hover:bg-black/50"}`}
-                    aria-label={`Go to ${leaders[i].name}`}
-                  />
-                ))}
-              </div>
-            </div>
-
+              <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
+                <path d="M11 3L5 9L11 15" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+              </svg>
+            </button>
+            <button
+              onClick={goNext}
+              disabled={current >= maxCurrent}
+              className="w-12 h-12 rounded-full border border-black/30 flex items-center justify-center text-black hover:bg-black hover:text-[#fdfbe8] transition-colors duration-300 disabled:opacity-40 disabled:cursor-not-allowed"
+              aria-label="Next"
+            >
+              <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
+                <path d="M7 3L13 9L7 15" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+              </svg>
+            </button>
+            <span className="text-black/40 text-sm font-mono ml-2">
+              {current + 1}–{Math.min(current + visibleCount, total)} of {total}
+            </span>
           </div>
         </div>
       </section>

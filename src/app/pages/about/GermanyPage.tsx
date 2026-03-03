@@ -6,11 +6,11 @@ export function GermanyPage() {
   return (
     <div
       className="min-h-screen flex flex-col items-start px-6 md:px-10 lg:px-16 py-24 md:py-28"
-      style={{ backgroundColor: "#400606" }}
+      style={{ backgroundColor: "#82f1b7" }}
     >
       {/* First div: heading — Industry Authority style */}
       <div className="w-full max-w-6xl mt-12 md:mt-16 mb-16 md:mb-20 px-6 md:px-10 lg:px-16">
-        <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-normal text-[#ffffff] leading-[1.1] tracking-tight">
+        <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-normal text-[#193c2a] leading-[1.1] tracking-tight">
           Welcome to <em className="font-serif italic">Frankfurt</em>
         </h1>
       </div>
@@ -35,12 +35,13 @@ export function GermanyPage() {
               className="w-full h-full object-cover"
             />
           </div>
-          <div className="space-y-3 text-[#ffffff] text-sm md:text-base leading-relaxed w-full max-w-none">
+          <div className="space-y-3 text-[#193c2a] text-sm md:text-base leading-relaxed w-full max-w-none">
             <div>
               <p className="font-semibold text-base md:text-lg">Bikramjit Paul Choudhury</p>
-              <p className="text-xs md:text-sm text-[#ffffff]/80">+49 173 5239318</p>
+              <p className="text-xs md:text-sm text-[#193c2a]/80">+49 173 5239318</p>
+              <a href="mailto:bikramjitpaul.choudhury@quantumtech-hub.com" className="text-xs md:text-sm text-[#193c2a]/80 hover:underline block break-all">bikramjitpaul.choudhury@quantumtech-hub.com</a>
             </div>
-            <p className="text-xs md:text-sm font-medium uppercase tracking-wide text-[#ffffff]/80">
+            <p className="text-xs md:text-sm font-medium uppercase tracking-wide text-[#193c2a]/80">
               Focus Areas – Technology, Healthcare, Business Transformation, Mergers & Acquisitions, Operations
             </p>
             <p>

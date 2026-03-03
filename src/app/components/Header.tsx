@@ -74,8 +74,17 @@ const navItems: NavItem[] = [
     ],
   },
   {
-    label: "Global Value Engine",
+    label: "Value Stream",
     to: "/global-value-engine",
+    panel: [
+      {
+        heading: "Value Stream",
+        items: [
+          { label: "Global Value Engine", to: "/global-value-engine" },
+          { label: "Transformation Capital", to: "/transformation-capital" },
+        ],
+      },
+    ],
   },
 ];
 
@@ -240,7 +249,9 @@ export function Header() {
           {/* Desktop nav — hover-triggered */}
           <nav className="hidden md:flex items-center gap-9">
             {navItems.map((item) => {
-              const active = isActive(item.to);
+              const active =
+                isActive(item.to) ||
+                (item.panel?.some((s) => s.items.some((sub) => isActive(sub.to))) ?? false);
               const isPanelOpen = activePanel?.label === item.label;
 
               const baseColor = isPanelOpen || active ? "#5eead4" : "#ffffff";

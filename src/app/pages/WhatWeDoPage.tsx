@@ -14,7 +14,7 @@ export function WhatWeDoPage() {
           <div className="grid grid-cols-[55%_45%] gap-6 md:gap-10 items-start w-full">
             <div className="pt-10 md:pt-16 pl-6 md:pl-10 lg:pl-14">
               <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-normal text-[#000000] leading-[1.1] tracking-tight">
-                What We Do
+                Helping organisations evolve, accelerate and outperform
               </h1>
             </div>
             <div className="mt-40 md:mt-52 lg:mt-64 xl:mt-80 space-y-4 text-[#000000] text-sm md:text-base leading-relaxed mr-10 md:mr-16 lg:mr-24 xl:mr-32">

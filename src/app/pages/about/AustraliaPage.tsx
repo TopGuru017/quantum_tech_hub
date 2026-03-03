@@ -39,6 +39,7 @@ export function AustraliaPage() {
             <div>
               <p className="font-semibold text-base md:text-lg">Sanjay Krishnaa</p>
               <p className="text-xs md:text-sm text-[#ffffff]/80">+61 405 525 048</p>
+              <a href="mailto:sanjay.krishnaa@quantumtech-hub.com" className="text-xs md:text-sm text-[#ffffff]/80 hover:underline block break-all">sanjay.krishnaa@quantumtech-hub.com</a>
             </div>
             <p className="text-xs md:text-sm font-medium uppercase tracking-wide text-[#ffffff]/80">
               Focus Areas – Telecom, Energy & Utilities, Technology, Business Transformation, Mergers & Acquisitions, Operations

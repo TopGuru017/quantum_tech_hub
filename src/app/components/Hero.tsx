@@ -204,7 +204,7 @@ export function Hero() {
                   }}
                 />
                 <span className="text-white text-3xl tracking-wide">
-                Explore Resources
+                Who We Are
                 </span>
               </div>
             </span>

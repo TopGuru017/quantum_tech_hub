@@ -65,10 +65,6 @@ export function Footer() {
                 </a>
               </div>
               <div>
-                <p className="text-gray-500 text-xs uppercase tracking-wide mb-1">Location</p>
-                <p className="text-gray-400 text-sm">Australia &amp; Global</p>
-              </div>
-              <div>
                 <p className="text-gray-500 text-xs uppercase tracking-wide mb-2">Follow Us</p>
                 <div className="flex gap-3">
                   {["in", "tw", "fb"].map((social) => (

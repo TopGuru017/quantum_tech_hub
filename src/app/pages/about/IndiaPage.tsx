@@ -39,6 +39,7 @@ export function IndiaPage() {
             <div>
               <p className="font-semibold text-base md:text-lg">Piyush Tandon</p>
               <p className="text-xs md:text-sm text-[#1c3249]/80">+91 89782 66886</p>
+              <a href="mailto:piyush.tandon@quantumtech-hub.com" className="text-xs md:text-sm text-[#1c3249]/80 hover:underline block break-all">piyush.tandon@quantumtech-hub.com</a>
             </div>
             <p className="text-xs md:text-sm font-medium uppercase tracking-wide text-[#1c3249]/80">
               Focus Areas – Telecom, Technology, Business Models, Operations, Mergers & Operations

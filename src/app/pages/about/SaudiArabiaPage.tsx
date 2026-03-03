@@ -38,6 +38,7 @@ export function SaudiArabiaPage() {
           <div className="space-y-3 text-[#1c3249] text-sm md:text-base leading-relaxed w-full max-w-none">
             <div>
               <p className="font-semibold text-base md:text-lg">Vatsa Kalyanasundaram</p>
+              <a href="mailto:info@quantumtech-hub.com" className="text-xs md:text-sm text-[#1c3249]/80 hover:underline block break-all">info@quantumtech-hub.com</a>
             </div>
             <p className="text-xs md:text-sm font-medium uppercase tracking-wide text-[#1c3249]/80">
               Focus Areas – Telecom, Technology, Energy

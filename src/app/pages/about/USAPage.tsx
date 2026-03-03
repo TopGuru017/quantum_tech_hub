@@ -39,6 +39,7 @@ export function USAPage() {
             <div>
               <p className="font-semibold text-base md:text-lg">Kurt Simmons</p>
               <p className="text-xs md:text-sm text-[#1c3249]/80">+1 (480) 544-3613</p>
+              <a href="mailto:kurt.simmons@quantumtech-hub.com" className="text-xs md:text-sm text-[#1c3249]/80 hover:underline block break-all">kurt.simmons@quantumtech-hub.com</a>
             </div>
             <p className="text-xs md:text-sm font-medium uppercase tracking-wide text-[#1c3249]/80">
               Focus Areas – Telecom, Technology, Healthcare, Business Models, Operations
