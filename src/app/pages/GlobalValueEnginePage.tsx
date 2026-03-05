@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState, type ReactNode } from "react";
-import { GLOBAL_VALUE_IMAGE } from "../assets/images";
+import { GLOBAL_VALUE_VIDEO } from "../assets/images";
 
 // ── count-up stat (animates from 0 to target when in view) ─────────────────────
 function CountUpStat({
@@ -201,57 +201,22 @@ export function GlobalValueEnginePage() {
         </div>
       </section>
 
-      {/* ── 2. Facts + Image (cream background) ── */}
+      {/* ── 2. Facts + Video (cream background) ── */}
       <section
         ref={factsRef}
         className="py-14 md:py-20 px-6 md:px-12 lg:px-20"
         style={{ backgroundColor: "#fdfbe8" }}
       >
-        <div className="max-w-5xl mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 mb-12 md:mb-16">
-            <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl font-normal text-[#30373b]">
-              The Facts
-            </h2>
-            <p className="md:text-right text-[#30373b] text-base md:text-lg self-end">
-              Numbers that we're confident of, yet humble about.
-            </p>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-0">
-            <CountUpStat
-              target={1700}
-              suffix="+"
-              label="Total GCCs"
-              start={factsInView}
-            />
-            <CountUpStat
-              target={2975}
-              suffix="+"
-              label="GCC Centres"
-              start={factsInView}
-            />
-            <CountUpStat
-              target={120}
-              suffix="+"
-              label="AI/ML COE"
-              start={factsInView}
-            />
-            <CountUpStat
-              target={2.5}
-              suffix="Mn"
-              label="Projected Headcount by 2030"
-              decimals={1}
-              start={factsInView}
-            />
-          </div>
-        </div>
 
-        {/* Image section: flush left, 90% viewport width */}
+        {/* Video section: flush left, 90% viewport width */}
         <div className="mt-16 md:mt-24 -ml-6 md:-ml-12 lg:-ml-20 overflow-hidden">
-          <img
-            src={GLOBAL_VALUE_IMAGE}
-            alt="Global Value Engine"
-            className="block object-cover object-center"
-            style={{ width: "90vw", marginLeft: 0 }}
+          <video
+            src={GLOBAL_VALUE_VIDEO}
+            autoPlay
+            loop
+            muted
+            playsInline
+            className="block object-cover object-center w-[90vw]"
           />
         </div>
 

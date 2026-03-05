@@ -3,7 +3,7 @@ import { motion } from "motion/react";
 const partners = [
   "SAMSUNG", "NOKIA", "Vodafone", "ERICSSON",
   "PIF", "McKinsey & Company", "ABB", "Endeavour Energy",
-  "HCL", "Wipro", "SIEMENS", "CYIENT",
+  "Singapore Power", "Southern California Eddison", "SIEMENS", "Sempra",
 ];
 
 const vp = { once: true, margin: "-80px" };

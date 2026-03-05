@@ -58,22 +58,6 @@ const navItems: NavItem[] = [
     ],
   },
   {
-    label: "Phygital Convergence",
-    to: "/digital-fusion",
-    panel: [
-      {
-        heading: "Service Lines",
-        items: [
-          { label: "Artificial Intelligence", to: "/digital-fusion/ai" },
-          { label: "Cyber Security", to: "/digital-fusion/cyber-security" },
-          { label: "Cloud Transformation", to: "/digital-fusion/transformation-consulting" },
-          { label: "Data Integrity", to: "/digital-fusion/cloud-strategy" },
-
-        ],
-      },
-    ],
-  },
-  {
     label: "Value Stream",
     to: "/global-value-engine",
     panel: [
@@ -82,6 +66,16 @@ const navItems: NavItem[] = [
         items: [
           { label: "Global Value Engine", to: "/global-value-engine" },
           { label: "Transformation Capital", to: "/transformation-capital" },
+        ],
+      },
+      {
+        heading: "Phygital Convergence",
+        items: [
+          { label: "Digital Fusion", to: "/digital-fusion" },
+          { label: "Artificial Intelligence", to: "/digital-fusion/ai" },
+          { label: "Cyber Security", to: "/digital-fusion/cyber-security" },
+          { label: "Cloud Transformation", to: "/digital-fusion/transformation-consulting" },
+          { label: "Data Integrity", to: "/digital-fusion/cloud-strategy" },
         ],
       },
     ],

@@ -30,7 +30,7 @@ const values = [
 
 export function AboutPage() {
   return (
-    <div className="bg-black min-h-screen">
+    <div className="bg-black min-h-screen font-sans antialiased">
       {/* ── Hero: Purpose Driven (full screen, text left / image right) ── */}
       <section className="flex flex-col md:flex-row min-h-screen">
         {/* Left: text */}
@@ -42,7 +42,6 @@ export function AboutPage() {
             <h1 className="text-white text-4xl md:text-5xl lg:text-6xl font-bold mb-5 leading-snug">
               Who We Are
             </h1>
-
           </div>
         </div>
 
@@ -94,9 +93,8 @@ export function AboutPage() {
         </div>
         {/* Right: title + paragraphs with padding */}
         <div className="md:w-1/2 flex flex-col justify-center py-14 md:py-20 px-6 md:px-12 lg:px-16 order-2 md:order-2">
-          <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-normal text-[#1c3249] leading-[1.1] tracking-tight">
-            <span className="block">Our <em className="font-serif italic">Value</em> Promise</span>
-
+          <h2 className="text-[#1c3249] text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold leading-snug tracking-tight">
+            <span className="block">Our <em className="italic">Value</em> Promise</span>
           </h2>
           <div className="mt-20 md:mt-32 lg:mt-40 xl:mt-48 space-y-5 text-[#1c3249] text-sm md:text-base leading-relaxed max-w-xl">
             <p>
@@ -130,10 +128,10 @@ export function AboutPage() {
       {/* ── How We Collaborate ── */}
       <section className="min-h-screen flex flex-col py-14 md:py-20 px-6 md:px-12 lg:px-20" style={{ backgroundColor: "#f7f7f7" }}>
         <div className="flex-1 flex flex-col justify-center max-w-6xl mx-auto w-full grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-14 lg:gap-20 items-start">
-          {/* Left: half width — large serif title */}
+          {/* Left: half width — title (same style as Who We Are) */}
           <div className="md:col-span-1">
-            <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-normal text-[#1c3249] leading-[1.1] tracking-tight">
-              <span className="block">How <em className="font-serif italic">we</em> collaborate?</span>
+            <h2 className="text-[#1c3249] text-4xl md:text-5xl lg:text-6xl font-bold leading-snug tracking-tight">
+              <span className="block">How <em className="italic">we</em> collaborate?</span>
             </h2>
           </div>
           {/* Right: half width — body paragraphs */}

@@ -67,7 +67,7 @@ export function Footer() {
               <div>
                 <p className="text-gray-500 text-xs uppercase tracking-wide mb-2">Follow Us</p>
                 <div className="flex gap-3">
-                  {["in", "tw", "fb"].map((social) => (
+                  {["in"].map((social) => (
                     <span
                       key={social}
                       className="w-8 h-8 rounded border border-gray-500 flex items-center justify-center text-gray-400 text-xs cursor-default"

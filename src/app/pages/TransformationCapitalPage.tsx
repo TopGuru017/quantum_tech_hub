@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { CAPITAL_IMAGE } from "../assets/images";
+import { TRANSFORMATION_CAPITAL_VIDEO } from "../assets/images";
 
 // ── Accordion items: each has title, intro paragraph, and bullets ─────────────
 type AccordionItem = {
@@ -122,13 +122,21 @@ export function TransformationCapitalPage() {
   return (
     <div className="bg-white min-h-screen">
 
-      {/* ── 1. First section: title only, background image ── */}
+      {/* ── 1. First section: title over background video ── */}
       <section
-        className="pt-16 md:pt-20 pb-14 md:pb-20 relative bg-cover bg-center min-h-screen flex flex-col justify-start"
-        style={{ backgroundImage: `url(${CAPITAL_IMAGE})` }}
+        className="pt-16 md:pt-20 pb-14 md:pb-20 relative min-h-screen flex flex-col justify-start overflow-hidden"
       >
+        <video
+          className="absolute inset-0 w-full h-full object-cover"
+          src={TRANSFORMATION_CAPITAL_VIDEO}
+          autoPlay
+          loop
+          muted
+          playsInline
+        />
+        <div className="absolute inset-0 bg-black/30" />
         <div className="relative z-10 pl-6 md:pl-10 lg:pl-14 pr-6 md:pr-12 lg:pr-20">
-          <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-normal text-[#000000] leading-[1.1] tracking-tight">
+          <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-normal text-[#ffffff] leading-[1.1] tracking-tight">
             <span className="block">Transformation</span>
             <em className="font-serif italic block">Capital</em>
           </h1>
@@ -141,7 +149,7 @@ export function TransformationCapitalPage() {
         style={{ backgroundColor: "#fdfbe8" }}
       >
         <div className="flex-1 flex flex-col justify-center max-w-6xl mx-auto w-full grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-14 lg:gap-16 items-start">
-          <div className="md:col-span-1 flex flex-col justify-center -ml-6 md:-ml-12 lg:-ml-20 space-y-4 text-black/90 text-sm md:text-base leading-relaxed font-semibold">
+          <div className="md:col-span-1 flex flex-col justify-center space-y-4 text-black/80 text-sm md:text-base leading-relaxed">
             <p>
               We connect strategic transformation with capital allocation and funding.
             </p>

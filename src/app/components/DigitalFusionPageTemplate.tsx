@@ -19,6 +19,8 @@ interface Props {
   /** Optional image shown on the right side of the second section */
   secondSectionImage?: string;
   secondSectionImageAlt?: string;
+  /** Optional video for the right side of the second section (takes precedence over image) */
+  secondSectionVideo?: string;
 }
 
 export function DigitalFusionPageTemplate({
@@ -32,6 +34,7 @@ export function DigitalFusionPageTemplate({
   firstSectionTextColor = "#fdfbe8",
   secondSectionImage,
   secondSectionImageAlt = "",
+  secondSectionVideo,
 }: Props) {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
@@ -143,14 +146,25 @@ export function DigitalFusionPageTemplate({
             </div>
           </div>
 
-          {/* Right: image — flush top and right edge */}
-          {secondSectionImage && (
+          {/* Right: media — flush top and right edge */}
+          {(secondSectionVideo || secondSectionImage) && (
             <div className="hidden md:block sticky top-0 self-start -mr-4 md:-mr-8 lg:-mr-14">
-              <img
-                src={secondSectionImage}
-                alt={secondSectionImageAlt}
-                className="w-full h-auto object-cover"
-              />
+              {secondSectionVideo ? (
+                <video
+                  src={secondSectionVideo}
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
+                  className="w-full h-auto object-cover"
+                />
+              ) : (
+                <img
+                  src={secondSectionImage}
+                  alt={secondSectionImageAlt}
+                  className="w-full h-auto object-cover"
+                />
+              )}
             </div>
           )}
         </div>

@@ -1,6 +1,6 @@
 import React from "react";
 import { DigitalFusionPageTemplate, FusionSection } from "../../components/DigitalFusionPageTemplate";
-import { CYBER_SECURITY_BANNER } from "../../assets/images";
+import { CYBER_SECURITY_VIDEO } from "../../assets/images";
 
 function LabelList({ items }: { items: { label: string; desc: string }[] }) {
   return (
@@ -168,7 +168,7 @@ export function CyberSecurityPage() {
       titleItalic="Security"
       firstSectionRightContent={cyberSecurityFirstSectionRightContent}
       sections={sections}
-      secondSectionImage={CYBER_SECURITY_BANNER}
+      secondSectionVideo={CYBER_SECURITY_VIDEO}
       secondSectionImageAlt="Cybersecurity"
     />
   );

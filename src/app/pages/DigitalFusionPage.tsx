@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { FUSION_BANNER } from "../assets/images";
+import { FUSION_BANNER_VIDEO } from "../assets/images";
 
 // ── service card data ────────────────────────────────────────────────────────
 const services = [
@@ -82,11 +82,14 @@ export function DigitalFusionPage() {
             </div>
           </div>
         </div>
-        {/* Image: starts from absolute screen left, 85% width, no padding */}
-        <div className="w-[85%]">
-          <img
-            src={FUSION_BANNER}
-            alt="Digital Fusion"
+        {/* Video: starts from absolute screen left, 85% width, no padding */}
+        <div className="w-[85%] overflow-hidden">
+          <video
+            src={FUSION_BANNER_VIDEO}
+            autoPlay
+            loop
+            muted
+            playsInline
             className="w-full h-auto object-cover object-center"
           />
         </div>

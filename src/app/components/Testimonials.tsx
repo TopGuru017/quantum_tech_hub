@@ -1,4 +1,5 @@
 import { motion } from "motion/react";
+import { useState } from "react";
 
 const testimonials = [
   {
@@ -16,11 +17,23 @@ const testimonials = [
       "Strategic collaboration to reduce OPEX & CAPEX, expand outsourcing/offshoring footprint, drive higher productivity, data quality & manage cost. Defined operational framework to achieve client's 2030 objective. Achieved 95% data quality, 30% cost reduction and 40% productivity improvement.",
     client: "A Telecom Giant In Australia",
   },
+  {
+    quote:
+      "Developed a global cloud-based data platform for a leading smart home IoT ecosystem, connecting over 100 million devices across home appliances, mobile devices, and wearables. The platform supports seamless connectivity through home hubs and cloud-to-cloud integrations, enabling a unified data pipeline that delivers end-to-end capabilities in data warehousing, streaming, governance, analytics, and actionable insights.",
+    client: "A Global Technology Leader from South Korea",
+  },
 ];
 
 const vp = { once: true, margin: "-80px" };
 
 export function Testimonials() {
+  const [index, setIndex] = useState(0);
+  const total = testimonials.length;
+  const visible = 3;
+
+  const next = () => setIndex((prev) => (prev + 1) % total);
+  const prev = () => setIndex((prev) => (prev - 1 + total) % total);
+
   return (
     <motion.section
       id="transformation"
@@ -63,38 +76,58 @@ export function Testimonials() {
           </h3>
         </motion.div>
 
-        {/* Cards — staggered slide up with scale */}
-        <motion.div
-          className="grid grid-cols-1 md:grid-cols-3 gap-6"
-          initial="hidden"
-          whileInView="visible"
-          viewport={vp}
-          variants={{ visible: { transition: { staggerChildren: 0.12, delayChildren: 0.2 } } }}
-        >
-          {testimonials.map((t, i) => (
-            <motion.div
-              key={i}
-              variants={{
-                hidden: { opacity: 0, y: 56, scale: 0.96 },
-                visible: { opacity: 1, y: 0, scale: 1, transition: { duration: 0.65, ease: [0.25, 0.46, 0.45, 0.94] } },
-              }}
-              whileHover={{ y: -8, scale: 1.02, transition: { duration: 0.25 } }}
-              className="bg-white/60 border border-gray-300 rounded-lg p-7 hover:border-teal-500 hover:bg-white/80 transition-colors duration-300 flex flex-col"
+        {/* Cards — 3-at-once carousel with smooth slide */}
+        <div className="relative max-w-7xl mx-auto">
+          <div className="overflow-hidden">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              {Array.from({ length: visible }).map((_, offset) => {
+                const t = testimonials[(index + offset) % total];
+                const key = `${(index + offset) % total}-${offset}`;
+                return (
+                  <motion.div
+                    key={key}
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.7, ease: [0.25, 0.46, 0.45, 0.94] }}
+                    className="bg-white/60 border border-gray-300 rounded-lg p-7 hover:border-teal-500 hover:bg-white/80 transition-colors duration-300 flex flex-col h-full"
+                  >
+                    {/* Quote mark */}
+                    <div
+                      className="text-teal-600 text-5xl leading-none mb-4 select-none"
+                      style={{ fontFamily: "'Playfair Display', serif" }}
+                    >
+                      "
+                    </div>
+                    <p className="text-gray-700 text-sm leading-relaxed mb-6 flex-1">{t.quote}</p>
+                    <div className="border-t border-gray-300 pt-4">
+                      <p className="text-gray-900 text-sm font-medium">{t.client}</p>
+                    </div>
+                  </motion.div>
+                );
+              })}
+            </div>
+          </div>
+
+          {/* Arrow controls */}
+          <div className="flex items-center justify-center gap-4 mt-8">
+            <button
+              type="button"
+              onClick={prev}
+              className="w-10 h-10 rounded-full border border-gray-400 flex items-center justify-center text-gray-700 hover:bg-gray-800 hover:text-white transition-colors duration-300"
+              aria-label="Previous client impact"
             >
-              {/* Quote mark */}
-              <div
-                className="text-teal-600 text-5xl leading-none mb-4 select-none"
-                style={{ fontFamily: "'Playfair Display', serif" }}
-              >
-                "
-              </div>
-              <p className="text-gray-700 text-sm leading-relaxed mb-6 flex-1">{t.quote}</p>
-              <div className="border-t border-gray-300 pt-4">
-                <p className="text-gray-900 text-sm font-medium">{t.client}</p>
-              </div>
-            </motion.div>
-          ))}
-        </motion.div>
+              ‹
+            </button>
+            <button
+              type="button"
+              onClick={next}
+              className="w-10 h-10 rounded-full border border-gray-400 flex items-center justify-center text-gray-700 hover:bg-gray-800 hover:text-white transition-colors duration-300"
+              aria-label="Next client impact"
+            >
+              ›
+            </button>
+          </div>
+        </div>
       </div>
     </motion.section>
   );

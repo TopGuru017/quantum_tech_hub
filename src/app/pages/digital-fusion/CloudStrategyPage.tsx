@@ -1,6 +1,6 @@
 import React from "react";
 import { DigitalFusionPageTemplate, FusionSection } from "../../components/DigitalFusionPageTemplate";
-import { CLOUD_STRATEGY_BANNER } from "../../assets/images";
+import { CLOUD_STRATEGY_VIDEO } from "../../assets/images";
 
 function BulletList({ items }: { items: string[] }) {
   return (
@@ -165,7 +165,7 @@ export function CloudStrategyPage() {
       titleItalic="Integrity"
       firstSectionRightContent={cloudStrategyFirstSectionRightContent}
       sections={sections}
-      secondSectionImage={CLOUD_STRATEGY_BANNER}
+      secondSectionVideo={CLOUD_STRATEGY_VIDEO}
       secondSectionImageAlt="Cloud Strategy"
     />
   );

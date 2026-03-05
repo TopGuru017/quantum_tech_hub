@@ -6,12 +6,13 @@ import { Link } from "react-router";
 import { PAGE_HERO_VIDEO } from "../assets/images";
 
 const topics = [
-  "Digital Fusion",
-  "Industry Authority",
-  "Cloud Strategy",
+  "Organization Transformation",
+  "Operating Models",
+  "Transformation Capital",
   "Gen AI",
-  "Transformation",
+  "Cloud",
   "Cyber Security",
+  "Data Integrity",
 ];
 
 export function Hero() {
@@ -51,7 +52,7 @@ export function Hero() {
         {/* Main heading */}
         <div className="overflow-hidden mb-6 pb-2">
           <motion.h1
-            className="text-white text-5xl md:text-7xl lg:text-8xl leading-none pt-1"
+            className="text-white text-[2.5rem] md:text-[3.75rem] lg:text-[5.25rem] leading-none pt-1"
             style={{ fontFamily: "'Playfair Display', serif" }}
             initial={{ opacity: 0, y: 60 }}
             animate={{ opacity: 1, y: 0 }}
@@ -68,7 +69,7 @@ export function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, ease: "easeOut", delay: 0.65 }}
         >
-          We help organisations succeed with their most important digital transformations.
+          We enable enterprises to accelerate transformation by uniting digital innovation, global talent, and scalable operations.
         </motion.p>
 
         {/* Topic pills */}
@@ -81,10 +82,10 @@ export function Hero() {
             className="text-white/50 text-xs mb-3 italic"
             style={{ fontFamily: "'Playfair Display', serif" }}
           >
-            This is what we are (especially) nerdy about:
+            This is what we are (especially) astute about:
           </p>
           <motion.div
-            className="flex flex-wrap gap-2"
+            className="flex flex-wrap gap-2 max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg"
             initial="hidden"
             animate="visible"
             variants={{ visible: { transition: { staggerChildren: 0.07, delayChildren: 0.95 } } }}

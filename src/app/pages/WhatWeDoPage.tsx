@@ -37,7 +37,7 @@ export function WhatWeDoPage() {
         <div className="relative z-10 flex-1 flex flex-col justify-center max-w-6xl mx-auto w-full grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-14 lg:gap-16 items-start">
           <div className="md:col-span-1" />
           <div className="md:col-span-1 w-full mt-4 md:mt-6 lg:mt-8 ml-16 md:ml-28 lg:ml-40 xl:ml-48">
-            <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl font-normal text-black leading-[1.15] tracking-tight mb-36 md:mb-44 lg:mb-52 xl:mb-60">
+            <h2 className="font-sans text-4xl md:text-5xl lg:text-6xl font-bold text-black leading-snug tracking-tight mb-36 md:mb-44 lg:mb-52 xl:mb-60">
               Value Streams
             </h2>
             <div className="mt-20 md:mt-24 lg:mt-32 xl:mt-40">
