@@ -1,4 +1,5 @@
-import { PAGE_HERO_BACKGROUND, SMART_MANUFACTURING_BANNER } from "../../assets/images";
+import React from "react";
+import { PAGE_HERO_BACKGROUND, MANUFACTURING_VIDEO } from "../../assets/images";
 import { MessageCircleQuestion, Users, Settings2, Building2 } from "lucide-react";
 import {
   IndustrySubPageTemplate,
@@ -66,10 +67,10 @@ export function ManufacturingPage() {
     <IndustrySubPageTemplate
       pageTitle="Smart Manufacturing"
       heroImage={PAGE_HERO_BACKGROUND}
-      firstSectionBgImage={SMART_MANUFACTURING_BANNER}
       accent="teal"
+      pageBackgroundColor="#fdfbe8"
       firstSectionVariant="split"
-      firstSectionTitleColor="#6b1e89"
+      firstSectionVideo={MANUFACTURING_VIDEO}
       introTitleMain="Smart"
       introTitleItalic="Manufacturing"
       secondSectionVariant="howWeHelp"

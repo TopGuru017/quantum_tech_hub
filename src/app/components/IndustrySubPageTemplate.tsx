@@ -63,6 +63,10 @@ interface Props {
   firstSectionTextColor?: string;
   /** Optional separate text color for the title only; falls back to firstSectionTextColor */
   firstSectionTitleColor?: string;
+  /** Optional overall page background color; defaults to black */
+  pageBackgroundColor?: string;
+  /** When set with split variant: About-page style first section (left title, right video, no bg image) */
+  firstSectionVideo?: string;
   /** "howWeHelp" = second section split: left "How we help", right accordion of columns with descriptions */
   secondSectionVariant?: "default" | "howWeHelp";
 }
@@ -82,6 +86,8 @@ export function IndustrySubPageTemplate({
   firstSectionBgImage,
   firstSectionTextColor,
   firstSectionTitleColor,
+  pageBackgroundColor = "#000000",
+  firstSectionVideo,
   secondSectionVariant = "default",
 }: Props) {
   const c = palette[accent];
@@ -104,8 +110,40 @@ export function IndustrySubPageTemplate({
     : { backgroundColor: splitFirstSectionBg };
 
   return (
-    <div className="bg-black min-h-screen">
-      {isSplitFirstSection ? (
+    <div className="min-h-screen" style={{ backgroundColor: pageBackgroundColor }}>
+      {isSplitFirstSection && firstSectionVideo ? (
+        /* ── First section: About-page hero style (left text, right media) ── */
+        <section className="flex flex-col md:flex-row min-h-screen">
+          {/* Left: text */}
+          <div
+            className="md:w-1/2 flex items-center px-8 md:px-12 lg:px-16 py-12 md:py-16 order-2 md:order-1"
+            style={{ backgroundColor: firstSectionBgColor ?? "#223c59" }}
+          >
+            <div className="max-w-2xl">
+              <h1 className="text-white text-4xl md:text-5xl lg:text-6xl font-bold mb-5 leading-snug">
+                {splitTitleMain}
+                {splitTitleItalic != null && (
+                  <> <em className="italic">{splitTitleItalic}</em></>
+                )}
+              </h1>
+            </div>
+          </div>
+
+          {/* Right: video (mirrors About image block) */}
+          <div className="md:w-1/2 relative overflow-hidden min-h-[280px] md:min-h-full order-1 md:order-2">
+            <video
+              src={firstSectionVideo}
+              autoPlay
+              loop
+              muted
+              playsInline
+              className="w-full h-full min-h-[280px] md:min-h-full object-cover"
+            />
+            {/* slight dark overlay on left edge for blending */}
+            <div className="absolute inset-y-0 left-0 w-16 bg-gradient-to-r from-black to-transparent hidden md:block" />
+          </div>
+        </section>
+      ) : isSplitFirstSection ? (
         /* ── First section: Industry Authority style (full-screen, two columns) ── */
         <section
           className="min-h-screen flex flex-col pt-28 md:pt-36 pb-14 md:pb-20 pl-4 md:pl-8 lg:pl-14 pr-6 md:pr-12 lg:pr-20"

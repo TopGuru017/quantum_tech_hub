@@ -1,4 +1,5 @@
-import { PAGE_HERO_BACKGROUND, SOFTWARE_BANNER } from "../../assets/images";
+import React from "react";
+import { PAGE_HERO_BACKGROUND, SOFTWARE_VIDEO } from "../../assets/images";
 import { MessageCircleQuestion, Users, Settings2, Building2 } from "lucide-react";
 import {
   IndustrySubPageTemplate,
@@ -65,9 +66,10 @@ export function SoftwarePage() {
       pageTitle="Software & Technology"
       heroImage={PAGE_HERO_BACKGROUND}
       accent="pink"
+      pageBackgroundColor="#fdfbe8"
       firstSectionVariant="split"
-      firstSectionBgImage={SOFTWARE_BANNER}
-      firstSectionTitleColor="#874f03"
+      firstSectionBgColor="#4e5c69"
+      firstSectionVideo={SOFTWARE_VIDEO}
       introTitleMain="Software &"
       introTitleItalic="Technology"
       secondSectionVariant="howWeHelp"

@@ -1,5 +1,5 @@
 import React from "react";
-import { TELECOM_BANNER } from "../../assets/images";
+import { TELECOM_BANNER, TELECOM_VIDEO } from "../../assets/images";
 import { MessageCircleQuestion, Users, Settings2, Building2 } from "lucide-react";
 import {
   IndustrySubPageTemplate,
@@ -67,15 +67,15 @@ export function TelecomPage() {
     <IndustrySubPageTemplate
       pageTitle="Telecommunication & Media"
       heroImage={TELECOM_BANNER}
-      firstSectionBgImage={TELECOM_BANNER}
-      firstSectionTextColor="#ffffff"
-      firstSectionTitleColor="#610505"
       accent="teal"
+      pageBackgroundColor="#fdfbe8"
+      firstSectionBgColor="#376894"
       firstSectionVariant="split"
+      firstSectionVideo={TELECOM_VIDEO}
       introTitleMain="Telecommunication &"
       introTitleItalic="Media"
       secondSectionVariant="howWeHelp"
-      // headline={`"Fixed, mobile, satellite, and broadband communications" each offer distinct yet equally significant opportunities and challenges.`}
+      headline="Fixed, mobile, satellite, and broadband communications each offer distinct yet equally significant opportunities and challenges."
       paragraphs={[
         "Shape 5G, fibre and edge enabled business models and rollout strategies, from concept through business case and roadmap.",
         "Design and implement cloud native network and platform architectures with embedded data integrity, observability and automation across key processes.",

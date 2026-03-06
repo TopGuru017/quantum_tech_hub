@@ -1,5 +1,5 @@
 import React from "react";
-import { PAGE_HERO_BACKGROUND, HEALTHCARE_BANNER } from "../../assets/images";
+import { PAGE_HERO_BACKGROUND, HEALTHCARE_VIDEO } from "../../assets/images";
 import { MessageCircleQuestion, Users, Settings2, Building2 } from "lucide-react";
 import {
   IndustrySubPageTemplate,
@@ -67,9 +67,10 @@ export function HealthcarePage() {
       pageTitle="Healthcare"
       heroImage={PAGE_HERO_BACKGROUND}
       accent="green"
+      pageBackgroundColor="#fdfbe8"
       firstSectionVariant="split"
-      firstSectionBgImage={HEALTHCARE_BANNER}
-      firstSectionTitleColor="#3d819e"
+      firstSectionBgColor="#a9a6a2"
+      firstSectionVideo={HEALTHCARE_VIDEO}
       introTitleMain="Healthcare"
       secondSectionVariant="howWeHelp"
       headline="Reimagining the Future Landscape of Healthcare"

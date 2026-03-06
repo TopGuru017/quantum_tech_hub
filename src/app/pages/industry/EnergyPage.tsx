@@ -1,5 +1,5 @@
 import React from "react";
-import { PAGE_HERO_BACKGROUND, ENERGY_BANNER } from "../../assets/images";
+import { PAGE_HERO_BACKGROUND, ENERGY_BANNER, ENERGY_VIDEO } from "../../assets/images";
 import { MessageCircleQuestion, Users, Settings2, Building2 } from "lucide-react";
 import {
   IndustrySubPageTemplate,
@@ -67,14 +67,14 @@ export function EnergyPage() {
       pageTitle="Energy & Utilities"
       heroImage={PAGE_HERO_BACKGROUND}
       accent="orange"
+      pageBackgroundColor="#fdfbe8"
       firstSectionVariant="split"
-      firstSectionBgImage={ENERGY_BANNER}
-      firstSectionBgColor="#406438"
-      firstSectionTitleColor="#134d19"
+      firstSectionBgColor="#667f7d"
+      firstSectionVideo={ENERGY_VIDEO}
       introTitleMain="Energy &"
       introTitleItalic="Utilities"
       secondSectionVariant="howWeHelp"
-      // headline={`"Powering the Future: Global Utilities Navigate Digital Disruption, Customer Demands, and a Race Toward Sustainable Innovation"`}
+      headline="Powering the future: global utilities navigate digital disruption, customer demands, and a race toward sustainable innovation."
       paragraphs={[
         "Transform energy operations and infrastructure to become more efficient, sustainable, and resilient. Harness the power of data, AI, and automation to optimise energy production, distribution, and consumption.",
         "Strengthen OT security and resilience for critical infrastructure so networks, plants, and field assets remain safe and available.",
