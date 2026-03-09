@@ -63,7 +63,7 @@ export function DigitalFusionPage() {
         {/* Left/right columns — no left padding, same as image */}
         <div className="pr-3 md:pr-6 lg:pr-10 pb-10 md:pb-14">
           <div className="grid grid-cols-[55%_45%] gap-6 md:gap-10 items-start w-full">
-            <div className="pt-10 md:pt-16 pl-6 md:pl-10 lg:pl-14">
+            <div className="pt-24 md:pt-28 lg:pt-32 pl-6 md:pl-10 lg:pl-14">
               <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-normal text-[#fdfbe8] leading-[1.1] tracking-tight whitespace-nowrap">
                 <span className="block">Boosting Innovation,</span>
                 <span className="block">Enabling Scale</span>

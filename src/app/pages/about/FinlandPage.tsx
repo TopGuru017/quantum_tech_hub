@@ -1,4 +1,5 @@
 import React from "react";
+import { Linkedin } from "lucide-react";
 import { ImageWithFallback } from "../../components/figma/ImageWithFallback";
 import { HELSINKI, LEADER_MIKKO } from "../../assets/images";
 
@@ -37,11 +38,22 @@ export function FinlandPage() {
           </div>
           <div className="space-y-3 text-[#15423f] text-sm md:text-base leading-relaxed w-full max-w-none">
             <div>
-              <p className="font-semibold text-base md:text-lg">Mikko Mattheiszen</p>
+              <div className="flex items-center gap-2">
+                <p className="font-semibold text-base md:text-lg">Mikko Mattheiszen</p>
+                <a
+                  href="https://www.linkedin.com/in/mikko-mattheiszen-21b3982"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="text-[#15423f]/80 hover:text-[#15423f]"
+                  aria-label="Mikko Mattheiszen on LinkedIn"
+                >
+                  <Linkedin className="w-4 h-4" />
+                </a>
+              </div>
               <p className="text-xs md:text-sm text-[#15423f]/80">+358 50 3651767</p>
               <a href="mailto:Mikko.Mattheiszen@quantumtech-hub.com" className="text-xs md:text-sm text-[#15423f]/80 hover:underline block break-all">Mikko.Mattheiszen@quantumtech-hub.com</a>
             </div>
-            <p className="text-xs md:text-sm font-medium uppercase tracking-wide text-[#15423f]/80">
+            <p className="text-xs md:text-sm font-semibold tracking-wide text-[#15423f]/80">
               Focus Areas – Telecom, Technology, Energy
             </p>
             <p>

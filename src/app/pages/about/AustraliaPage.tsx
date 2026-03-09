@@ -1,4 +1,5 @@
 import React from "react";
+import { Linkedin } from "lucide-react";
 import { ImageWithFallback } from "../../components/figma/ImageWithFallback";
 import { MELBOURNE, LEADER_SANJAY } from "../../assets/images";
 
@@ -37,11 +38,22 @@ export function AustraliaPage() {
           </div>
           <div className="space-y-3 text-[#ffffff] text-sm md:text-base leading-relaxed w-full max-w-none">
             <div>
-              <p className="font-semibold text-base md:text-lg">Sanjay Krishnaa</p>
+              <div className="flex items-center gap-2">
+                <p className="font-semibold text-base md:text-lg">Sanjay Krishnaa</p>
+                <a
+                  href="https://www.linkedin.com/in/sanjay-krishnaa-893ab63"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="text-[#ffffff]/80 hover:text-[#ffffff]"
+                  aria-label="Sanjay Krishnaa on LinkedIn"
+                >
+                  <Linkedin className="w-4 h-4" />
+                </a>
+              </div>
               <p className="text-xs md:text-sm text-[#ffffff]/80">+61 405 525 048</p>
               <a href="mailto:sanjay.krishnaa@quantumtech-hub.com" className="text-xs md:text-sm text-[#ffffff]/80 hover:underline block break-all">sanjay.krishnaa@quantumtech-hub.com</a>
             </div>
-            <p className="text-xs md:text-sm font-medium uppercase tracking-wide text-[#ffffff]/80">
+            <p className="text-xs md:text-sm font-semibold tracking-wide text-[#ffffff]/80">
               Focus Areas – Telecom, Energy & Utilities, Technology, Business Transformation, Mergers & Acquisitions, Operations
             </p>
             <p>

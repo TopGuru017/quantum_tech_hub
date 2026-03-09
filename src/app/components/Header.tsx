@@ -15,19 +15,13 @@ type NavItem = {
 // ── Nav config ─────────────────────────────────────────────────────────────────
 const navItems: NavItem[] = [
   {
-    label: "What we do",
-    to: "/what-we-do",
-    panel: [
-      {
-        heading: "Our Company",
-        items: [{ label: "Leadership", to: "/about/leadership" }],
-      },
-    ],
-  },
-  {
     label: "Who we are",
     to: "/about",
     panel: [
+      {
+        heading: "Our company",
+        items: [{ label: "Leadership", to: "/about/leadership" }],
+      },
       {
         heading: "Our Presence",
         items: [
@@ -39,18 +33,14 @@ const navItems: NavItem[] = [
           { label: "India", to: "/about/india" },
         ],
       },
-      {
-        heading: "Our company",
-        items: [{ label: "Leadership", to: "/about/leadership" }],
-      },
     ],
   },
   {
-    label: "Industry Authority",
-    to: "/industry",
+    label: "What we do",
+    to: "/what-we-do",
     panel: [
       {
-        heading: "Expertise Areas",
+        heading: "Industry Authority",
         items: [
           { label: "Telecommunication & Media", to: "/industry/telecom" },
           { label: "Energy & Utilities", to: "/industry/energy" },
@@ -59,22 +49,11 @@ const navItems: NavItem[] = [
           { label: "Healthcare", to: "/industry/healthcare" },
         ],
       },
-    ],
-  },
-  {
-    label: "Value Stream",
-    to: "/global-value-engine",
-    panel: [
       {
         heading: "Value Stream",
         items: [
           { label: "Global Value Engine", to: "/global-value-engine" },
           { label: "Transformation Capital", to: "/transformation-capital" },
-        ],
-      },
-      {
-        heading: "Phygital Convergence",
-        items: [
           { label: "Digital Fusion", to: "/digital-fusion" },
           { label: "Artificial Intelligence", to: "/digital-fusion/ai" },
           { label: "Cyber Security", to: "/digital-fusion/cyber-security" },

@@ -1,4 +1,5 @@
 import React from "react";
+import { Linkedin } from "lucide-react";
 import { ImageWithFallback } from "../../components/figma/ImageWithFallback";
 import { FRANKFURT, LEADER_BIKRAMJIT } from "../../assets/images";
 
@@ -37,11 +38,27 @@ export function GermanyPage() {
           </div>
           <div className="space-y-3 text-[#193c2a] text-sm md:text-base leading-relaxed w-full max-w-none">
             <div>
-              <p className="font-semibold text-base md:text-lg">Bikramjit Paul Choudhury</p>
+              <div className="flex items-center gap-2">
+                <p className="font-semibold text-base md:text-lg">Bikramjit Paul Choudhury</p>
+                <a
+                  href="https://www.linkedin.com/in/bikramjit-paul-choudhury-2bab532"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="text-[#193c2a]/80 hover:text-[#193c2a]"
+                  aria-label="Bikramjit Paul Choudhury on LinkedIn"
+                >
+                  <Linkedin className="w-4 h-4" />
+                </a>
+              </div>
               <p className="text-xs md:text-sm text-[#193c2a]/80">+49 173 5239318</p>
-              <a href="mailto:bikramjitpaul.choudhury@quantumtech-hub.com" className="text-xs md:text-sm text-[#193c2a]/80 hover:underline block break-all">bikramjitpaul.choudhury@quantumtech-hub.com</a>
+              <a
+                href="mailto:bikramjitpaul.choudhury@quantumtech-hub.com"
+                className="text-[10px] md:text-xs text-[#193c2a]/80 hover:underline block break-all"
+              >
+                bikramjitpaul.choudhury@quantumtech-hub.com
+              </a>
             </div>
-            <p className="text-xs md:text-sm font-medium uppercase tracking-wide text-[#193c2a]/80">
+            <p className="text-xs md:text-sm font-semibold tracking-wide text-[#193c2a]/80">
               Focus Areas – Technology, Healthcare, Business Transformation, Mergers & Acquisitions, Operations
             </p>
             <p>

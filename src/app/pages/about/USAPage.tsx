@@ -1,4 +1,5 @@
 import React from "react";
+import { Linkedin } from "lucide-react";
 import { ImageWithFallback } from "../../components/figma/ImageWithFallback";
 import { PHOENIX, LEADER_KURT } from "../../assets/images";
 
@@ -6,11 +7,11 @@ export function USAPage() {
   return (
     <div
       className="min-h-screen flex flex-col items-start px-6 md:px-10 lg:px-16 py-24 md:py-28"
-      style={{ backgroundColor: "#ecc9c9" }}
+      style={{ backgroundColor: "#a8631e" }}
     >
       {/* First div: heading — Industry Authority style */}
       <div className="w-full max-w-6xl mt-12 md:mt-16 mb-16 md:mb-20 px-6 md:px-10 lg:px-16">
-        <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-normal text-[#1c3249] leading-[1.1] tracking-tight">
+        <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-normal text-[#ffffff] leading-[1.1] tracking-tight">
           Welcome to <em className="font-serif italic">Phoenix</em>
         </h1>
       </div>
@@ -35,13 +36,24 @@ export function USAPage() {
               className="w-full h-full object-cover"
             />
           </div>
-          <div className="space-y-3 text-[#1c3249] text-sm md:text-base leading-relaxed w-full max-w-none">
+          <div className="space-y-3 text-[#ffffff] text-sm md:text-base leading-relaxed w-full max-w-none">
             <div>
-              <p className="font-semibold text-base md:text-lg">Kurt Simmons</p>
-              <p className="text-xs md:text-sm text-[#1c3249]/80">+1 (480) 544-3613</p>
-              <a href="mailto:kurt.simmons@quantumtech-hub.com" className="text-xs md:text-sm text-[#1c3249]/80 hover:underline block break-all">kurt.simmons@quantumtech-hub.com</a>
+              <div className="flex items-center gap-2">
+                <p className="font-semibold text-base md:text-lg">Kurt Simmons</p>
+                <a
+                  href="https://www.linkedin.com/in/kurt-simmons1"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="text-[#ffffff]/80 hover:text-[#ffffff]"
+                  aria-label="Kurt Simmons on LinkedIn"
+                >
+                  <Linkedin className="w-4 h-4" />
+                </a>
+              </div>
+              <p className="text-xs md:text-sm text-[#ffffff]/80">+1 (480) 544-3613</p>
+              <a href="mailto:kurt.simmons@quantumtech-hub.com" className="text-xs md:text-sm text-[#ffffff]/80 hover:underline block break-all">kurt.simmons@quantumtech-hub.com</a>
             </div>
-            <p className="text-xs md:text-sm font-medium uppercase tracking-wide text-[#1c3249]/80">
+            <p className="text-xs md:text-sm font-semibold tracking-wide text-[#ffffff]/80">
               Focus Areas – Telecom, Technology, Healthcare, Business Models, Operations
             </p>
             <p>

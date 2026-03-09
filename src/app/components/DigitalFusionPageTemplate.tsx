@@ -64,7 +64,7 @@ export function DigitalFusionPageTemplate({
       >
         <div className="grid md:grid-cols-2 gap-6 md:gap-10 w-full pr-6 md:pr-12 lg:pr-20">
           {/* Left: title */}
-          <div className="flex flex-col justify-start">
+          <div className="flex flex-col justify-start pt-24 md:pt-28 lg:pt-32">
             <h1
               className="font-serif text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-normal leading-[1.1] tracking-tight"
               style={{ color: firstSectionTextColor }}
