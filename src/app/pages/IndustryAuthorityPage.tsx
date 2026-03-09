@@ -64,7 +64,7 @@ export function IndustryAuthorityPage() {
       <section className="min-h-screen flex flex-col py-14 md:py-20 px-6 md:px-12 lg:px-20" style={{ backgroundColor: "#30373b" }}>
         <div className="flex-1 flex flex-col justify-center max-w-6xl mx-auto w-full grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-14 lg:gap-20 items-start">
           {/* Left: half width — large serif title */}
-          <div className="md:col-span-1">
+          <div className="md:col-span-1 pt-24 md:pt-28 lg:pt-32">
             <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-normal text-[#fdfbe8] leading-[1.1] tracking-tight">
               <span className="block">Industry <em className="font-serif italic">Authority</em></span>
             </h2>

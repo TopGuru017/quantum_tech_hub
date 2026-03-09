@@ -82,7 +82,7 @@ export function Hero() {
             className="text-white/50 text-xs mb-3 italic"
             style={{ fontFamily: "'Playfair Display', serif" }}
           >
-            This is what we are (especially) astute about:
+            This is what we are astute about:
           </p>
           <motion.div
             className="flex flex-wrap gap-2 max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg"

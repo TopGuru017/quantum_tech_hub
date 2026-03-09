@@ -1,10 +1,6 @@
+import React from "react";
 import { motion } from "motion/react";
-
-const partners = [
-  "SAMSUNG", "NOKIA", "Vodafone", "ERICSSON",
-  "PIF", "McKinsey & Company", "ABB", "Endeavour Energy",
-  "Singapore Power", "Southern California Eddison", "SIEMENS", "Sempra",
-];
+import { PARTNER_LOGOS } from "../assets/images";
 
 const vp = { once: true, margin: "-80px" };
 
@@ -54,19 +50,21 @@ export function Partners() {
           viewport={vp}
           variants={{ visible: { transition: { staggerChildren: 0.05, delayChildren: 0.15 } } }}
         >
-          {partners.map((partner) => (
+          {PARTNER_LOGOS.map((partner) => (
             <motion.div
-              key={partner}
+              key={partner.name}
               variants={{
                 hidden: { opacity: 0, y: 28, scale: 0.94 },
                 visible: { opacity: 1, y: 0, scale: 1, transition: { duration: 0.5, ease: [0.25, 0.46, 0.45, 0.94] } },
               }}
-              whileHover={{ y: -5, scale: 1.02, boxShadow: "0 10px 28px rgba(0,0,0,0.1)" }}
-              className="flex items-center justify-center p-4 border border-gray-300 rounded-lg hover:border-teal-500 transition-colors duration-200 h-16 cursor-default"
+              whileHover={{ y: -5, scale: 1.02 }}
+              className="flex items-center justify-center p-4 h-16 cursor-default transition-transform duration-200"
             >
-              <span className="text-gray-700 text-sm tracking-wide text-center">
-                {partner}
-              </span>
+              <img
+                src={partner.logo}
+                alt={partner.name}
+                className="max-h-10 w-auto max-w-full object-contain"
+              />
             </motion.div>
           ))}
         </motion.div>

@@ -69,7 +69,7 @@ export function TelecomPage() {
       heroImage={TELECOM_BANNER}
       accent="teal"
       pageBackgroundColor="#fdfbe8"
-      firstSectionBgColor="#376894"
+      firstSectionBgColor="#7d6325"
       firstSectionVariant="split"
       firstSectionVideo={TELECOM_VIDEO}
       introTitleMain="Telecommunication &"

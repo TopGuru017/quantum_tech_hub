@@ -29,7 +29,7 @@ const navItems: NavItem[] = [
     to: "/about",
     panel: [
       {
-        heading: "Our offices",
+        heading: "Our Presence",
         items: [
           { label: "USA", to: "/about/usa" },
           { label: "Germany", to: "/about/germany" },
@@ -38,6 +38,10 @@ const navItems: NavItem[] = [
           { label: "Australia", to: "/about/australia" },
           { label: "India", to: "/about/india" },
         ],
+      },
+      {
+        heading: "Our company",
+        items: [{ label: "Leadership", to: "/about/leadership" }],
       },
     ],
   },

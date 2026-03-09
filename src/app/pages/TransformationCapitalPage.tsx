@@ -135,7 +135,7 @@ export function TransformationCapitalPage() {
           playsInline
         />
         <div className="absolute inset-0 bg-black/30" />
-        <div className="relative z-10 pl-6 md:pl-10 lg:pl-14 pr-6 md:pr-12 lg:pr-20">
+        <div className="relative z-10 pl-6 md:pl-10 lg:pl-14 pr-6 md:pr-12 lg:pr-20 pt-24 md:pt-28 lg:pt-32">
           <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-normal text-[#ffffff] leading-[1.1] tracking-tight">
             <span className="block">Transformation</span>
             <em className="font-serif italic block">Capital</em>

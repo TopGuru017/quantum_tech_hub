@@ -53,7 +53,19 @@ import helsinkiImg from "@/assets/helsinki.jpg";
 import riyadhImg from "@/assets/riyadh.jpg";
 import melbourneImg from "@/assets/melbourne.jpg";
 import delhiImg from "@/assets/delhi.jpg";
-
+// Company logos for Our Network (Partners) — from assets/company_logo/
+import samsungLogo from "@/assets/company_logo/samsung.png";
+import nokiaLogo from "@/assets/company_logo/nokia.png";
+import vodafoneLogo from "@/assets/company_logo/vodafone.png";
+import ericssonLogo from "@/assets/company_logo/ericsson.png";
+import pifLogo from "@/assets/company_logo/pif.png";
+import mckinseyLogo from "@/assets/company_logo/mckinsey.png";
+import abbLogo from "@/assets/company_logo/abb.png";
+import endeavourEnergyLogo from "@/assets/company_logo/endeavour.png";
+import singaporePowerLogo from "@/assets/company_logo/sp.png";
+import southernCaliforniaEdisonLogo from "@/assets/company_logo/edison.png";
+import siemensLogo from "@/assets/company_logo/siemens.png";
+import sempraLogo from "@/assets/company_logo/sempra.png";
 
 export const SITE_LOGO = siteLogoImg;
 
@@ -119,3 +131,19 @@ export const HELSINKI = helsinkiImg;
 export const RIYADH = riyadhImg;
 export const MELBOURNE = melbourneImg;
 export const DELHI = delhiImg;
+
+// Partner / Our Network logos (order matches Partners grid)
+export const PARTNER_LOGOS = [
+  { name: "SAMSUNG", logo: samsungLogo },
+  { name: "NOKIA", logo: nokiaLogo },
+  { name: "Vodafone", logo: vodafoneLogo },
+  { name: "ERICSSON", logo: ericssonLogo },
+  { name: "PIF", logo: pifLogo },
+  { name: "McKinsey & Company", logo: mckinseyLogo },
+  { name: "ABB", logo: abbLogo },
+  { name: "Endeavour Energy", logo: endeavourEnergyLogo },
+  { name: "Singapore Power", logo: singaporePowerLogo },
+  { name: "Southern California Edison", logo: southernCaliforniaEdisonLogo },
+  { name: "SIEMENS", logo: siemensLogo },
+  { name: "Sempra", logo: sempraLogo },
+];

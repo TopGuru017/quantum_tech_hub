@@ -7,8 +7,7 @@ const leaders = [
     img: LEADER_SANJAY,
     role: "Managing Partner, Australia",
     name: "Sanjay Krishnaa",
-    phone: "+61 405 525 048",
-    email: "sanjay.krishnaa@quantumtech-hub.com",
+
     bio: [
       "Sanjay is a global strategic business & technology leader with over 20 years experience in consulting, advising & successfully building & running scale businesses in diverse industries.",
       "He demonstrated repeated success in leading design, development & implementation of corporate strategy, business transformation, leading inorganic growth, driving market-making impact & sustainable successful business outcome.",
@@ -18,8 +17,6 @@ const leaders = [
     img: LEADER_ALOKNATH,
     role: "Senior Partner, India",
     name: "Dr. Aloknath De",
-    phone: null,
-    email: "info@quantumtech-hub.com",
     bio: [
       "Dr. De is a distinguished leader with over 30 years of extensive in technology and engineering space. He has been driving Cyber-Physical Systems (CPS) design that imbibes core tech: AI, Trusted Tech, IoT, Cobotics and 6G (ATIC6).",
       "Dr. De has been recognized in Top 50 Global CTOs. He received Graham Bell Prize (Canada), IETE Memorial Awards, IEEE MGA Innovation Award, IDC Insights Award, Vanguard Intrapreneurship Award, Nasscom AI Game-Changer Award; and also IESA for 'Innovative Product', Zinnov 'Intrapreneur of the Year', Assocham 'Tech Leader of the Year' and TechCircle for 'Business Transformation' among others.",
@@ -29,8 +26,6 @@ const leaders = [
     img: LEADER_PIYUSH,
     role: "Senior Partner, India",
     name: "Piyush Tandon",
-    phone: "+91 89782 66886",
-    email: "piyush.tandon@quantumtech-hub.com",
     bio: [
       "Piyush is an accomplished business leader and a visionary strategist with over 3 decades of global experience in spearheading Strategy, Business Innovation, Product Management and Digital Transformation initiatives of leading Product Engineering and Technology Services companies across APAC, EMEA & North America.",
       "Piyush brings extensive cross industry knowledge & experience of working with customers from 25+ countries across Communications, Utilities, Transportation, Automobile, FMCG & Healthcare industry segments.",
@@ -40,8 +35,6 @@ const leaders = [
     img: LEADER_BIKRAMJIT,
     role: "Senior Partner, Europe",
     name: "Bikramjit Paul Choudhury",
-    phone: "+49 173 5239318",
-    email: "bikramjitpaul.choudhury@quantumtech-hub.com",
     bio: [
       "Bikram is a global strategic business & technology leader with over 20 years experience in consulting, advising & successfully building & running scale businesses in diverse industries.",
       "He demonstrated repeated success in leading design, development & implementation of corporate strategy, business transformation, leading inorganic growth, driving market-making impact & sustainable successful business outcome.",
@@ -51,8 +44,7 @@ const leaders = [
     img: LEADER_KURT,
     role: "Senior Partner, USA & Canada",
     name: "Kurt Simmons",
-    phone: "+1 (480) 544-3613",
-    email: "kurt.simmons@quantumtech-hub.com",
+
     bio: [
       "Kurt brings more than two decades of global experience leading enterprise sales, partner ecosystems, and large‑scale technology transformation. He has held senior and executive leadership roles across major global technology and engineering organisations, including Ericsson, Xerox, Cyient, and United Technologies—experience that deeply strengthens our advisory capability.",
       "His ability to drive growth, shape complex programs, and turn digital, AI, cloud, and data strategies into measurable outcomes makes him a powerful addition to our leadership team.",
@@ -62,8 +54,7 @@ const leaders = [
     img: LEADER_MIKKO,
     role: "Senior Partner, Europe",
     name: "Mikko Mattheiszen",
-    phone: "+358 50 3651767",
-    email: "Mikko.Mattheiszen@quantumtech-hub.com",
+
     bio: [
       "Mikko is a dynamic and strategic operations and commercial leader with over 25 years of experience driving transformation, pricing strategy, and business performance at a global scale within telecommunications and electrical engineering corporations like Nokia, Siemens, ABB and Alcatel.",
       "He has consistently led complex organizational change initiatives, cross-functional virtual teams, and commercial excellence programs at Nokia. Mikko is known for shaping high-impact strategies, aligning business operations, and driving measurable value in highly competitive technology sectors.",
@@ -73,8 +64,7 @@ const leaders = [
     img: LEADER_VASTA,
     role: "Senior Partner, Middle East",
     name: "Vatsa Kalyanasundaram",
-    phone: null,
-    email: "info@quantumtech-hub.com",
+
     bio: [
       "Vatsa is a strategic leader with over 25 years of experience in telecommunications and digital transformation. He has held senior and executive leadership roles across major global technology and engineering organisations, including Ericsson, Xerox, Cyient, and United Technologies—experience that deeply strengthens our advisory capability.",
       "His ability to drive growth, shape complex programs, and turn digital, AI, cloud, and data strategies into measurable outcomes makes him a powerful addition to our leadership team.",
@@ -82,12 +72,12 @@ const leaders = [
   },
 ];
 
-const CARD_WIDTH = 380;
-const GAP = 48;
+const GAP = 24;
 
 export function LeadershipPage() {
   const [current, setCurrent] = useState(0);
-  const [visibleCount, setVisibleCount] = useState(4);
+  const [visibleCount, setVisibleCount] = useState(3);
+  const [cardWidth, setCardWidth] = useState(320);
   const trackRef = useRef<HTMLDivElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
 
@@ -95,30 +85,32 @@ export function LeadershipPage() {
   const maxCurrent = Math.max(0, total - visibleCount);
 
   useEffect(() => {
-    const updateVisible = () => {
-      const w = containerRef.current?.offsetWidth ?? 1200;
-      const w4 = 4 * CARD_WIDTH + 3 * GAP;
-      const w3 = 3 * CARD_WIDTH + 2 * GAP;
-      const w2 = 2 * CARD_WIDTH + GAP;
-      if (w < w2) setVisibleCount(1);
-      else if (w < w3) setVisibleCount(2);
-      else if (w < w4) setVisibleCount(3);
-      else setVisibleCount(4);
+    const updateLayout = () => {
+      const w = containerRef.current?.offsetWidth ?? 900;
+      if (w < 640) {
+        setVisibleCount(1);
+        setCardWidth(w);
+      } else if (w < 960) {
+        setVisibleCount(2);
+        setCardWidth((w - GAP) / 2);
+      } else {
+        setVisibleCount(3);
+        setCardWidth((w - 2 * GAP) / 3);
+      }
     };
-    updateVisible();
-    const ro = new ResizeObserver(updateVisible);
+    updateLayout();
+    const ro = new ResizeObserver(updateLayout);
     if (containerRef.current) ro.observe(containerRef.current);
     return () => ro.disconnect();
   }, []);
 
-
   useEffect(() => {
     const idx = Math.min(current, maxCurrent);
-    const offset = idx * (CARD_WIDTH + GAP);
+    const offset = idx * (cardWidth + GAP);
     if (trackRef.current) {
       trackRef.current.style.transform = `translateX(-${offset}px)`;
     }
-  }, [current, maxCurrent]);
+  }, [current, maxCurrent, cardWidth]);
 
   const goPrev = () => setCurrent((p) => Math.max(0, p - 1));
   const goNext = () => setCurrent((p) => Math.min(maxCurrent, p + 1));
@@ -154,26 +146,24 @@ export function LeadershipPage() {
         </div>
       </section>
 
-      {/* ── Second section: sliding carousel (3–4 visible, move one by one) ── */}
-      <section className="bg-[#fdfbe8] py-16 md:py-24 px-6 md:px-10 lg:px-16 flex flex-col items-center">
-        <div ref={containerRef} className="max-w-7xl w-full flex flex-col items-center">
-          <div
-            className="overflow-hidden mx-auto"
-            style={{
-              width: visibleCount * CARD_WIDTH + (visibleCount - 1) * GAP,
-              maxWidth: "100%",
-            }}
-          >
-          <div
-            ref={trackRef}
-            className="flex transition-transform duration-500 ease-out"
-            style={{ width: total * CARD_WIDTH + (total - 1) * GAP, gap: GAP }}
-          >
-            {leaders.map((leader, i) => (
-              <div
-                key={i}
-                className="flex-shrink-0 w-[380px] flex flex-col bg-white rounded-xl overflow-hidden shadow-sm border border-black/5"
-              >
+      {/* ── Second section: sliding carousel (3 per row, responsive full width) ── */}
+      <section className="bg-[#fdfbe8] py-16 md:py-24 px-4 md:px-6 lg:px-8 flex flex-col items-center">
+        <div ref={containerRef} className="w-full max-w-7xl flex flex-col items-center">
+          <div className="overflow-hidden w-full">
+            <div
+              ref={trackRef}
+              className="flex transition-transform duration-500 ease-out"
+              style={{
+                width: total * cardWidth + (total - 1) * GAP,
+                gap: GAP,
+              }}
+            >
+              {leaders.map((leader, i) => (
+                <div
+                  key={i}
+                  className="flex-shrink-0 flex flex-col bg-white rounded-xl overflow-hidden shadow-sm border border-black/5"
+                  style={{ width: cardWidth }}
+                >
                 <div className="aspect-square w-full overflow-hidden bg-gray-100">
                   <ImageWithFallback
                     src={leader.img}
@@ -188,16 +178,20 @@ export function LeadershipPage() {
                   <h3 className="font-serif text-xl md:text-2xl font-normal text-black leading-tight mb-2">
                     {leader.name}
                   </h3>
-                  {(leader.phone || leader.email) && (
-                    <div className="space-y-0.5 mb-3 text-[10px] md:text-xs text-black/70">
-                      {leader.phone && <p>{leader.phone}</p>}
-                      {leader.email && (
-                        <a href={`mailto:${leader.email}`} className="text-black/70 hover:text-black hover:underline break-all">
-                          {leader.email}
-                        </a>
-                      )}
-                    </div>
-                  )}
+                  {(() => {
+                    const l = leader as { phone?: string; email?: string };
+                    if (!l.phone && !l.email) return null;
+                    return (
+                      <div className="space-y-0.5 mb-3 text-[10px] md:text-xs text-black/70">
+                        {l.phone && <p>{l.phone}</p>}
+                        {l.email && (
+                          <a href={`mailto:${l.email}`} className="text-black/70 hover:text-black hover:underline break-all">
+                            {l.email}
+                          </a>
+                        )}
+                      </div>
+                    );
+                  })()}
                   <div className="space-y-2 text-black/80 text-[10px] md:text-xs leading-relaxed max-w-none">
                     {leader.bio.map((para, j) => (
                       <p key={j}>{para}</p>

@@ -146,9 +146,9 @@ export function DigitalFusionPageTemplate({
             </div>
           </div>
 
-          {/* Right: media — flush top and right edge */}
+          {/* Right: media — flush top and right edge, increased height */}
           {(secondSectionVideo || secondSectionImage) && (
-            <div className="hidden md:block sticky top-0 self-start -mr-4 md:-mr-8 lg:-mr-14">
+            <div className="hidden md:block sticky top-0 self-start -mr-4 md:-mr-8 lg:-mr-14 w-full h-[50vh] md:h-[60vh] lg:h-[70vh] min-h-[320px] overflow-hidden">
               {secondSectionVideo ? (
                 <video
                   src={secondSectionVideo}
@@ -156,13 +156,13 @@ export function DigitalFusionPageTemplate({
                   loop
                   muted
                   playsInline
-                  className="w-full h-auto object-cover"
+                  className="w-full h-full object-cover object-center"
                 />
               ) : (
                 <img
                   src={secondSectionImage}
                   alt={secondSectionImageAlt}
-                  className="w-full h-auto object-cover"
+                  className="w-full h-full object-cover object-center"
                 />
               )}
             </div>

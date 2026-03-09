@@ -1,5 +1,6 @@
 import { ImageWithFallback } from "../components/figma/ImageWithFallback";
-import { ABOUT_US_HERO, VALUE_HERO } from "../assets/images";
+import { VALUE_HERO } from "../assets/images";
+import { Partners } from "../components/Partners";
 
 const values = [
   {
@@ -31,48 +32,46 @@ const values = [
 export function AboutPage() {
   return (
     <div className="bg-black min-h-screen font-sans antialiased">
-      {/* ── Hero: Purpose Driven (full screen, text left / image right) ── */}
-      <section className="flex flex-col md:flex-row min-h-screen">
-        {/* Left: text */}
-        <div
-          className="md:w-1/2 flex items-center px-8 md:px-12 lg:px-16 py-12 md:py-16 order-2 md:order-1"
-          style={{ backgroundColor: "#223c59" }}
-        >
-          <div className="max-w-2xl">
-            <h1 className="text-white text-4xl md:text-5xl lg:text-6xl font-bold mb-5 leading-snug">
-              Who We Are
+      {/* ── First section: Industry Authority style (title left, body right) ── */}
+      <section className="min-h-screen flex flex-col py-14 md:py-20 px-6 md:px-12 lg:px-20" style={{ backgroundColor: "#223c59" }}>
+        <div className="flex-1 flex flex-col justify-center max-w-6xl mx-auto w-full grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-14 lg:gap-20 items-start">
+          {/* Left: large serif title */}
+          <div className="md:col-span-1 pt-24 md:pt-28 lg:pt-32">
+            <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-normal text-[#fdfbe8] leading-[1.1] tracking-tight">
+              <span className="block">A Global Catalyst for Enterprise Reinvention</span>
             </h1>
           </div>
-        </div>
-
-        {/* Right: image */}
-        <div className="md:w-1/2 relative overflow-hidden min-h-[280px] md:min-h-full order-1 md:order-2">
-          <ImageWithFallback
-            src={ABOUT_US_HERO}
-            alt="We are purpose driven"
-            className="w-full h-full min-h-[280px] md:min-h-full object-cover"
-          />
-          {/* slight dark overlay on left edge for blending */}
-          <div className="absolute inset-y-0 left-0 w-16 bg-gradient-to-r from-black to-transparent hidden md:block" />
+          {/* Right: body paragraphs */}
+          <div className="md:col-span-1 max-w-xl md:max-w-none md:pt-40 lg:pt-52 xl:pt-64 space-y-5 text-[#fdfbe8] text-sm md:text-base leading-relaxed">
+            <p>
+              We are a globally expanding Advisory and Technology Executionist firm, built on a simple belief: impact happens when ideas turn into action and ambition becomes measurable progress.
+            </p>
+            <p>
+              Our heritage is rooted in flat, open cultures where hierarchy never overshadows good thinking. We've learned that transformation succeeds when it connects personally with the people who bring it to life. That's why we champion collective intelligence, curiosity-driven leadership, and genuine engagement as the energy behind meaningful change.
+            </p>
+            <p>
+              Real transformation rarely emerges from a top-down rollout of a perfect plan. It takes more than direction. It requires pairing strategic clarity with the ability to spark a movement—one powered by capable, empowered people who choose to drive the change forward.
+            </p>
+          </div>
         </div>
       </section>
 
-      {/* ── Our Values (full screen, 2 per row × 3 rows) ── */}
-      <section className="min-h-screen bg-slate-50 flex flex-col">
-        <div className="flex-1 flex flex-col justify-center py-12 md:py-16 px-6 md:px-12 lg:px-20">
-          <h2 className="text-[#1c3249] text-4xl md:text-5xl font-bold mb-12 md:mb-16 text-center tracking-tight">
+      {/* ── Our Values (2 per row × 3 rows, compact) ── */}
+      <section className="bg-slate-50 py-12 md:py-16 px-6 md:px-12 lg:px-20">
+        <div className="max-w-5xl mx-auto w-full">
+          <h2 className="text-[#1c3249] text-3xl md:text-4xl font-bold mb-8 md:mb-10 text-center tracking-tight">
             Our Values
           </h2>
-          <div className="max-w-5xl mx-auto w-full grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 lg:gap-10">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-5 lg:gap-6">
             {values.map((v, i) => (
               <div
                 key={i}
-                className="group p-6 md:p-8 rounded-xl bg-white border border-slate-200/80 shadow-sm hover:shadow-md hover:border-slate-300 transition-all duration-300"
+                className="group p-4 md:p-5 rounded-xl bg-white border border-slate-200/80 shadow-sm hover:shadow-md hover:border-slate-300 transition-all duration-300"
               >
-                <h3 className="text-[#1c3249] font-bold text-lg md:text-xl mb-2 tracking-tight">
+                <h3 className="text-[#1c3249] font-bold text-base md:text-lg mb-1.5 tracking-tight">
                   {v.title}
                 </h3>
-                <p className="text-[#1c3249] text-sm md:text-base leading-relaxed">
+                <p className="text-[#1c3249] text-sm leading-relaxed">
                   {v.desc}
                 </p>
               </div>
@@ -164,6 +163,9 @@ export function AboutPage() {
           </div>
         </div>
       </section>
+      
+      {/* ── Our Network (moved from Home page) ── */}
+      <Partners />
     </div>
   );
 }

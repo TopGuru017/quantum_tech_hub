@@ -184,7 +184,7 @@ export function GlobalValueEnginePage() {
       <section className="min-h-screen flex flex-col py-14 md:py-20 px-6 md:px-12 lg:px-20" style={{ backgroundColor: "#032508" }}>
         <div className="flex-1 flex flex-col justify-center max-w-6xl mx-auto w-full grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-14 lg:gap-20 items-start">
           {/* Left: large serif title */}
-          <div className="md:col-span-1">
+          <div className="md:col-span-1 pt-24 md:pt-28 lg:pt-32">
             <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-normal text-[#fdfbe8] leading-[1.1] tracking-tight">
               <span className="block">Global Value</span>
               <em className="font-serif italic">Engine</em>
@@ -228,7 +228,7 @@ export function GlobalValueEnginePage() {
         style={{ backgroundColor: "#fdfbe8" }}
       >
         <div className="flex-1 flex flex-col justify-center max-w-6xl mx-auto w-full grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-14 lg:gap-16 items-start">
-          <div className="md:col-span-1 flex flex-col justify-center -ml-6 md:-ml-12 lg:-ml-20">
+          <div className="md:col-span-1 flex flex-col justify-center -ml-6 md:-ml-12 lg:-ml-20 pl-6 md:pl-10 lg:pl-14 pt-20 md:pt-24 lg:pt-28">
             <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl font-normal text-black leading-[1.15] tracking-tight">
             Outcomes
             </h2>

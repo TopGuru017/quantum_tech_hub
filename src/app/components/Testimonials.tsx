@@ -22,6 +22,21 @@ const testimonials = [
       "Developed a global cloud-based data platform for a leading smart home IoT ecosystem, connecting over 100 million devices across home appliances, mobile devices, and wearables. The platform supports seamless connectivity through home hubs and cloud-to-cloud integrations, enabling a unified data pipeline that delivers end-to-end capabilities in data warehousing, streaming, governance, analytics, and actionable insights.",
     client: "A Global Technology Leader from South Korea",
   },
+  {
+    quote:
+      "To strengthen real-time situational awareness across its network, the utility deployed full-color LED dissemination systems that projected live frequency, voltage, and MW data directly from SCADA. By giving operators instant visual cues—such as delayed frequency recovery after a tripping event—the solution enabled faster, more confident decision-making and helped preserve grid stability during periods of peak demand.",
+    client: "A leading European Utility",
+  },
+  {
+    quote:
+      "A leading digital-infrastructure provider launched a secured edge cloud platform designed to deliver Infrastructure-as-a-Service for utility and enterprise applications. By placing edge nodes inside hardened critical-infrastructure sites, the solution offered ultra-low latency, strong cybersecurity controls, and full data sovereignty. This hybrid ecosystem allowed utilities to process high-volume IoT sensor data at the edge before forwarding it to a central cloud, significantly reducing the wide-area network attack surface while improving performance and operational resilience.",
+    client: "One of the largest Utility in Asia",
+  },
+  {
+    quote:
+      "This initiative tackled the core barriers to AI-driven transformer maintenance, where sparse failure events, fragmented multimodal sensor data, and poor workflow integration had historically prevented meaningful predictive insights from reaching the field. By deploying continuous IoT monitoring across the fleet, unifying real-time data streams on a cloud-based analytics platform, and introducing explainable machine-learning models that generate daily health scores, the program enabled early fault detection and automated maintenance workflows directly within technician tools. The result is a step-change in asset reliability, faster decision-making, and a modernized maintenance ecosystem built on transparent, actionable intelligence.",
+    client: "US Based large Utility",
+  },
 ];
 
 const vp = { once: true, margin: "-80px" };
