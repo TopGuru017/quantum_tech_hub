@@ -55,21 +55,21 @@ export function DigitalFusionPage() {
   return (
     <div className="bg-white min-h-screen">
 
-      {/* ── 1. First section: title + paragraph + image, bg #667f7d, no left padding ── */}
+      {/* ── 1. First section: title + paragraph + image, bg #667f7d, responsive layout ── */}
       <section
         className="pt-20 md:pt-28 pb-0"
         style={{ backgroundColor: "#667f7d" }}
       >
         {/* Left/right columns — no left padding, same as image */}
         <div className="pr-3 md:pr-6 lg:pr-10 pb-10 md:pb-14">
-          <div className="grid grid-cols-[55%_45%] gap-6 md:gap-10 items-start w-full">
-            <div className="pt-24 md:pt-28 lg:pt-32 pl-6 md:pl-10 lg:pl-14">
-              <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-normal text-[#fdfbe8] leading-[1.1] tracking-tight whitespace-nowrap">
+          <div className="grid grid-cols-1 md:grid-cols-[55%_45%] gap-6 md:gap-10 items-start w-full">
+            <div className="pt-16 md:pt-24 lg:pt-32 pl-6 md:pl-10 lg:pl-14">
+              <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-normal text-[#fdfbe8] leading-[1.1] tracking-tight md:whitespace-nowrap">
                 <span className="block">Boosting Innovation,</span>
                 <span className="block">Enabling Scale</span>
               </h1>
             </div>
-            <div className="mt-40 md:mt-52 lg:mt-64 xl:mt-80 space-y-4 text-[#fdfbe8] text-sm md:text-base leading-relaxed mr-10 md:mr-16 lg:mr-24 xl:mr-32">
+            <div className="mt-8 md:mt-40 lg:mt-56 xl:mt-72 space-y-4 text-[#fdfbe8] text-sm md:text-base leading-relaxed mr-6 md:mr-16 lg:mr-24 xl:mr-32">
 
               <p>
               Phygital Convergence is how physical and digital worlds are brought together into one coherent change journey – strategy, design, data, and technology moving as a single system.
@@ -82,8 +82,8 @@ export function DigitalFusionPage() {
             </div>
           </div>
         </div>
-        {/* Video: starts from absolute screen left, 85% width, no padding */}
-        <div className="w-[85%] overflow-hidden">
+        {/* Video: full-width on mobile, 85% centered on larger screens */}
+        <div className="w-full md:w-[85%] mx-auto overflow-hidden">
           <video
             src={FUSION_BANNER_VIDEO}
             autoPlay
@@ -98,7 +98,7 @@ export function DigitalFusionPage() {
       {/* ── 2. How We Implement — same style as industry "How we help" ── */}
       <section className="min-h-screen flex flex-col py-16 md:py-24 px-6 md:px-12 lg:px-20" style={{ backgroundColor: "#fdfbe8" }}>
         <div className="flex-1 flex flex-col justify-center max-w-6xl mx-auto w-full grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-14 lg:gap-16 items-start">
-          <div className="md:col-span-1 flex flex-col justify-center -ml-6 md:-ml-12 lg:-ml-20">
+          <div className="md:col-span-1 flex flex-col justify-center -ml-0 md:-ml-12 lg:-ml-20">
             <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl font-normal text-black leading-[1.15] tracking-tight">
               How We Implement
             </h2>

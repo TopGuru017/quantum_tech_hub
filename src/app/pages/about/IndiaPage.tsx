@@ -1,11 +1,9 @@
-import React, { useState } from "react";
+import React from "react";
 import { Linkedin } from "lucide-react";
 import { ImageWithFallback } from "../../components/figma/ImageWithFallback";
 import { DELHI, LEADER_PIYUSH, LEADER_ALOKNATH } from "../../assets/images";
 
 export function IndiaPage() {
-  const [activeLeader, setActiveLeader] = useState<"piyush" | "aloknath">("piyush");
-
   return (
     <div
       className="min-h-screen flex flex-col items-start px-6 md:px-10 lg:px-16 py-24 md:py-28"
@@ -18,10 +16,10 @@ export function IndiaPage() {
         </h1>
       </div>
 
-      {/* Second + Third: side by side — image left (60%), leader card right with toggle */}
-      <div className="w-full flex flex-row items-start gap-0 -ml-6 md:-ml-10 lg:-ml-16">
+      {/* Second + Third: side by side — image left (60%), leader cards right stacked */}
+      <div className="w-full flex flex-col md:flex-row items-start gap-0 -ml-0 md:-ml-10 lg:-ml-16">
         {/* Second div: image — left of screen, 60% width */}
-        <div className="w-[60vw] shrink-0">
+        <div className="w-full md:w-[60vw] shrink-0">
           <ImageWithFallback
             src={DELHI}
             alt="Quantum Tech Hub in India"
@@ -29,26 +27,10 @@ export function IndiaPage() {
           />
         </div>
 
-        {/* Third div: leader card with toggle between Piyush and Dr. De */}
-        <div className="flex-1 flex flex-col gap-6 md:gap-8 items-start pl-6 md:pl-10 lg:pl-16 pr-0 pt-0 pb-8 md:pb-12 min-w-0">
-          {/* Toggle button */}
-          <div className="flex items-center gap-3 mb-2">
-            <button
-              type="button"
-              onClick={() =>
-                setActiveLeader((prev) => (prev === "piyush" ? "aloknath" : "piyush"))
-              }
-              className="px-3 py-1.5 rounded-full border border-[#1c3249]/30 bg-white/60 text-xs md:text-sm text-[#1c3249] hover:bg-white hover:border-[#1c3249]/60 transition-colors duration-200"
-            >
-              {activeLeader === "piyush"
-                ? "View Dr. Aloknath De"
-                : "View Piyush Tandon"}
-            </button>
-          </div>
-
-          {/* Active leader card */}
-          {activeLeader === "piyush" ? (
-            <div className="flex flex-col gap-6 md:gap-8 items-start w-full max-w-none">
+        {/* Third div: leader cards — Piyush then Dr. De */}
+        <div className="flex-1 flex flex-col gap-6 md:gap-8 items-start pl-0 md:pl-10 lg:pl-16 pr-0 pt-8 md:pt-0 pb-8 md:pb-12 min-w-0">
+          {/* Piyush card */}
+          <div className="flex flex-col gap-6 md:gap-8 items-start w-full max-w-none">
               <div className="w-40 h-40 md:w-48 md:h-48 rounded-xl overflow-hidden bg-white/60 shadow-md flex-shrink-0">
                 <ImageWithFallback
                   src={LEADER_PIYUSH}
@@ -56,66 +38,66 @@ export function IndiaPage() {
                   className="w-full h-full object-cover"
                 />
               </div>
-              <div className="space-y-3 text-[#1c3249] text-sm md:text-base leading-relaxed w-full max-w-none">
-                <div>
-                  <div className="flex items-center gap-2">
-                    <p className="font-semibold text-base md:text-lg">Piyush Tandon</p>
-                    <a
-                      href="https://www.linkedin.com/in/piyush-tandon"
-                      target="_blank"
-                      rel="noreferrer"
-                      className="text-[#1c3249]/80 hover:text-[#1c3249]"
-                      aria-label="Piyush Tandon on LinkedIn"
-                    >
-                      <Linkedin className="w-4 h-4" />
-                    </a>
-                  </div>
-                  <p className="text-xs md:text-sm text-[#1c3249]/80">+91 89782 66886</p>
+            <div className="space-y-3 text-[#1c3249] text-sm md:text-base leading-relaxed w-full max-w-none">
+              <div>
+                <div className="flex items-center gap-2">
+                  <p className="font-semibold text-base md:text-lg">Piyush Tandon</p>
                   <a
-                    href="mailto:piyush.tandon@quantumtech-hub.com"
-                    className="text-xs md:text-sm text-[#1c3249]/80 hover:underline block break-all"
+                    href="https://www.linkedin.com/in/piyush-tandon"
+                    target="_blank"
+                    rel="noreferrer"
+                    className="text-[#1c3249]/80 hover:text-[#1c3249]"
+                    aria-label="Piyush Tandon on LinkedIn"
                   >
-                    piyush.tandon@quantumtech-hub.com
+                    <Linkedin className="w-4 h-4" />
                   </a>
                 </div>
-                <p className="text-xs md:text-sm font-semibold tracking-wide text-[#1c3249]/80">
-                  Focus Areas – Telecom, Technology, Business Models, Operations, Mergers & Operations
-                </p>
-                <p>
-                  Piyush specialises in building and optimising India-based delivery and innovation hubs for global clients.
-                </p>
-                <p>
-                  He designs business models and operations that turn GCCs into engines of innovation, not just cost efficiency.
-                </p>
+                <p className="text-xs md:text-sm text-[#1c3249]/80">+91 89782 66886</p>
+                <a
+                  href="mailto:piyush.tandon@quantumtech-hub.com"
+                  className="text-[9px] md:text-[9px] text-[#1c3249]/80 hover:underline block"
+                >
+                  piyush.tandon@quantumtech-hub.com
+                </a>
               </div>
+              <p className="text-xs md:text-sm font-semibold tracking-wide text-[#1c3249]/80">
+                Focus Areas – Telecom, Technology, Business Models, Operations, Mergers & Operations
+              </p>
+              <p>
+                Piyush specialises in building and optimising India-based delivery and innovation hubs for global clients.
+              </p>
+              <p>
+                He designs business models and operations that turn GCCs into engines of innovation, not just cost efficiency.
+              </p>
             </div>
-          ) : (
-            <div className="flex flex-col gap-6 md:gap-8 items-start w-full max-w-none">
-              <div className="w-40 h-40 md:w-48 md:h-48 rounded-xl overflow-hidden bg-white/60 shadow-md flex-shrink-0">
-                <ImageWithFallback
-                  src={LEADER_ALOKNATH}
-                  alt="Dr. Aloknath De"
-                  className="w-full h-full object-cover"
-                />
-              </div>
-              <div className="space-y-3 text-[#1c3249] text-sm md:text-base leading-relaxed w-full max-w-none">
-                <div>
-                  <p className="font-semibold text-base md:text-lg">Dr. Aloknath De</p>
-                </div>
-                <p className="text-xs md:text-sm font-semibold tracking-wide text-[#1c3249]/80">
-                  Focus Areas – Cyber-Physical Systems, AI, Trusted Tech, IoT, Cobotics, 6G, Product & Platform Engineering
-                </p>
-                <p>
-                  Dr. De is a distinguished leader with over 30 years of experience in technology and engineering, driving Cyber-Physical Systems
-                  (CPS) design that brings together AI, trusted technologies, IoT, cobotics, and 6G.
-                </p>
-                <p>
-                  He has been recognised among the Top 50 Global CTOs and has received multiple international and national awards for innovation,
-                  intrapreneurship, and business transformation across industries.
-                </p>
-              </div>
+          </div>
+
+          {/* Dr. Aloknath De card */}
+          <div className="flex flex-col gap-6 md:gap-8 items-start w-full max-w-none">
+            <div className="w-40 h-40 md:w-48 md:h-48 rounded-xl overflow-hidden bg-white/60 shadow-md flex-shrink-0">
+              <ImageWithFallback
+                src={LEADER_ALOKNATH}
+                alt="Dr. Aloknath De"
+                className="w-full h-full object-cover"
+              />
             </div>
-          )}
+            <div className="space-y-3 text-[#1c3249] text-sm md:text-base leading-relaxed w-full max-w-none">
+              <div>
+                <p className="font-semibold text-base md:text-lg">Dr. Aloknath De</p>
+              </div>
+              <p className="text-xs md:text-sm font-semibold tracking-wide text-[#1c3249]/80">
+                Focus Areas – Cyber-Physical Systems, AI, Trusted Tech, IoT, Cobotics, 6G, Product & Platform Engineering
+              </p>
+              <p>
+                Dr. De is a distinguished leader with over 30 years of experience in technology and engineering, driving Cyber-Physical Systems
+                (CPS) design that brings together AI, trusted technologies, IoT, cobotics, and 6G.
+              </p>
+              <p>
+                He has been recognised among the Top 50 Global CTOs and has received multiple international and national awards for innovation,
+                intrapreneurship, and business transformation across industries.
+              </p>
+            </div>
+          </div>
         </div>
       </div>
     </div>

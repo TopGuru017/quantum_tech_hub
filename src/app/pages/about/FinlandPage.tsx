@@ -17,9 +17,9 @@ export function FinlandPage() {
       </div>
 
       {/* Second + Third: side by side — image left (60%), portrait+content right */}
-      <div className="w-full flex flex-row items-start gap-0 -ml-6 md:-ml-10 lg:-ml-16">
+      <div className="w-full flex flex-col md:flex-row items-start gap-0 -ml-0 md:-ml-10 lg:-ml-16">
         {/* Second div: image — left of screen, 60% width */}
-        <div className="w-[60vw] shrink-0">
+        <div className="w-full md:w-[60vw] shrink-0">
           <ImageWithFallback
             src={HELSINKI}
             alt="Quantum Tech Hub in Finland"
@@ -28,7 +28,7 @@ export function FinlandPage() {
         </div>
 
         {/* Third div: portrait on top, content below */}
-        <div className="flex-1 flex flex-col gap-6 md:gap-8 items-start pl-6 md:pl-10 lg:pl-16 pr-0 pt-0 pb-8 md:pb-12 min-w-0">
+        <div className="flex-1 flex flex-col gap-6 md:gap-8 items-start pl-0 md:pl-10 lg:pl-16 pr-0 pt-8 md:pt-0 pb-8 md:pb-12 min-w-0">
           <div className="w-40 h-40 md:w-48 md:h-48 rounded-xl overflow-hidden bg-white/60 shadow-md flex-shrink-0">
             <ImageWithFallback
               src={LEADER_MIKKO}
@@ -51,7 +51,12 @@ export function FinlandPage() {
                 </a>
               </div>
               <p className="text-xs md:text-sm text-[#15423f]/80">+358 50 3651767</p>
-              <a href="mailto:Mikko.Mattheiszen@quantumtech-hub.com" className="text-xs md:text-sm text-[#15423f]/80 hover:underline block break-all">Mikko.Mattheiszen@quantumtech-hub.com</a>
+              <a
+                href="mailto:Mikko.Mattheiszen@quantumtech-hub.com"
+                className="text-[9px] md:text-[9px] text-[#15423f]/80 hover:underline block"
+              >
+                Mikko.Mattheiszen@quantumtech-hub.com
+              </a>
             </div>
             <p className="text-xs md:text-sm font-semibold tracking-wide text-[#15423f]/80">
               Focus Areas – Telecom, Technology, Energy
