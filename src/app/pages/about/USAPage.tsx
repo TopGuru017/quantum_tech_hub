@@ -7,10 +7,10 @@ export function USAPage() {
   return (
     <div
       className="min-h-screen flex flex-col items-start px-6 md:px-10 lg:px-16 py-24 md:py-28"
-      style={{ backgroundColor: "#a8631e" }}
+      style={{ backgroundColor: "#93704b" }}
     >
       {/* First div: heading — Industry Authority style */}
-      <div className="w-full max-w-6xl mt-12 md:mt-16 mb-16 md:mb-20 px-6 md:px-10 lg:px-16">
+      <div className="w-full max-w-6xl mt-24 md:mt-28 mb-16 md:mb-20 px-6 md:px-10 lg:px-16">
         <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-normal text-[#ffffff] leading-[1.1] tracking-tight">
           Welcome to <em className="font-serif italic">Phoenix</em>
         </h1>
@@ -53,7 +53,7 @@ export function USAPage() {
               <p className="text-xs md:text-sm text-[#ffffff]/80">+1 (480) 544-3613</p>
               <a
                 href="mailto:kurt.simmons@quantumtech-hub.com"
-                className="text-[9px] md:text-[9px] text-[#ffffff]/80 hover:underline block"
+                className="text-sm md:text-base text-[#ffffff]/80 hover:underline block"
               >
                 kurt.simmons@quantumtech-hub.com
               </a>

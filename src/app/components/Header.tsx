@@ -4,7 +4,7 @@ import { Link, useLocation } from "react-router";
 import { SITE_LOGO } from "../assets/images";
 
 // ── Types ──────────────────────────────────────────────────────────────────────
-type SubItem = { label: string; to: string };
+type SubItem = { label: string; to: string; children?: SubItem[] };
 type PanelSection = { heading: string; items: SubItem[] };
 type NavItem = {
   label: string;
@@ -54,11 +54,16 @@ const navItems: NavItem[] = [
         items: [
           { label: "Global Value Engine", to: "/global-value-engine" },
           { label: "Transformation Capital", to: "/transformation-capital" },
-          { label: "Digital Fusion", to: "/digital-fusion" },
-          { label: "Artificial Intelligence", to: "/digital-fusion/ai" },
-          { label: "Cyber Security", to: "/digital-fusion/cyber-security" },
-          { label: "Cloud Transformation", to: "/digital-fusion/transformation-consulting" },
-          { label: "Data Integrity", to: "/digital-fusion/cloud-strategy" },
+          {
+            label: "Phygital Convergence",
+            to: "/digital-fusion",
+            children: [
+              { label: "Cyber Security", to: "/digital-fusion/cyber-security" },
+              { label: "AI", to: "/digital-fusion/ai" },
+              { label: "Cloud Transformation", to: "/digital-fusion/transformation-consulting" },
+              { label: "Data Integrity", to: "/digital-fusion/cloud-strategy" },
+            ],
+          },
         ],
       },
     ],
@@ -116,17 +121,32 @@ function DropPanel({
               </p>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-0">
                 {section.items.map((item) => (
-                  <Link
-                    key={item.to}
-                    to={item.to}
-                    onClick={onClose}
-                    className="group flex items-center justify-between py-3.5 border-b border-gray-100 hover:border-teal-300 text-left transition-colors duration-200"
-                  >
-                    <span className="text-gray-700 group-hover:text-teal-700 text-sm transition-colors duration-200">
-                      {item.label}
-                    </span>
-                    <ArrowUpRight className="w-3.5 h-3.5 text-gray-300 group-hover:text-teal-500 opacity-0 group-hover:opacity-100 transition-all duration-200 shrink-0" />
-                  </Link>
+                  <div key={item.to} className="border-b border-gray-100">
+                    <Link
+                      to={item.to}
+                      onClick={onClose}
+                      className="group flex items-center justify-between py-3.5 hover:border-teal-300 text-left transition-colors duration-200"
+                    >
+                      <span className="text-gray-700 group-hover:text-teal-700 text-sm transition-colors duration-200">
+                        {item.label}
+                      </span>
+                      <ArrowUpRight className="w-3.5 h-3.5 text-gray-300 group-hover:text-teal-500 opacity-0 group-hover:opacity-100 transition-all duration-200 shrink-0" />
+                    </Link>
+                    {item.children && item.children.length > 0 && (
+                      <div className="pl-4 pb-1">
+                        {item.children.map((child) => (
+                          <Link
+                            key={child.to}
+                            to={child.to}
+                            onClick={onClose}
+                            className="block py-2 text-gray-500 text-xs border-t border-gray-50 hover:text-teal-600 transition-colors duration-200"
+                          >
+                            {child.label}
+                          </Link>
+                        ))}
+                      </div>
+                    )}
+                  </div>
                 ))}
               </div>
             </div>
@@ -332,16 +352,20 @@ export function Header() {
                     {item.label}
                   </Link>
                   <div className="pl-4 pb-1">
-                    {item.panel.flatMap((s) => s.items).map((sub) => (
-                      <Link
-                        key={sub.to}
-                        to={sub.to}
-                        className="block py-2 text-gray-500 text-xs border-b border-gray-50 cursor-pointer hover:text-teal-600"
-                        onClick={() => setMobileOpen(false)}
-                      >
-                        {sub.label}
-                      </Link>
-                    ))}
+                    {item.panel
+                      .flatMap((s) =>
+                        s.items.flatMap((sub) => [sub, ...(sub.children ?? [])])
+                      )
+                      .map((sub) => (
+                        <Link
+                          key={sub.to}
+                          to={sub.to}
+                          className="block py-2 text-gray-500 text-xs border-b border-gray-50 cursor-pointer hover:text-teal-600"
+                          onClick={() => setMobileOpen(false)}
+                        >
+                          {sub.label}
+                        </Link>
+                      ))}
                   </div>
                 </div>
               ) : (

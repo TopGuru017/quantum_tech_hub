@@ -73,13 +73,13 @@ export function IndustryAuthorityPage() {
           <div className="md:col-span-1 max-w-xl md:max-w-none md:pt-40 lg:pt-52 xl:pt-64 space-y-5 text-[#fdfbe8] text-sm md:text-base leading-relaxed">
 
             <p>
-            Industry Authority at Quantum Tech Hub means combining sector deep practitioners with patterns that have already worked in telecom, utilities, healthcare, manufacturing, and technology. 
+            We believe you have to earn the right to help an organisation by understanding the real dynamics, constraints, and politics of the industry you’re walking into. But we also know that clinging only to “what works here” is the fastest way to kill breakthrough ideas.
             </p>
             <p>
-            Our teams bring benchmark data, regulatory context, and hands on delivery experience to each engagement, so recommendations are grounded in how your industry really competes, operates, and transforms.
+            For us, industry context is non-negotiable – and it always travels with deep functional expertise that often comes from other domains, sectors, and operating models. That cross-pollination is where genuinely new solutions emerge.
             </p>
             <p>
-            This lets us move quickly from insight to design to implementation, de-risking decisions while still pushing for differentiated, future-ready positions in your market.
+            New ideas don’t come from know-it-alls. They come from curious experts who respect the industry, challenge its assumptions, and never pretend they’ve seen it all.
             </p>
           </div>
         </div>

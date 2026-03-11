@@ -54,6 +54,12 @@ export function WhatWeDoPage() {
                 <li>
                   <strong className="text-black">Resilience value streams:</strong> Cybersecurity, data integrity, and cloud foundations that protect and stabilise critical operations.
                 </li>
+                <li>
+                  <strong className="text-black">Global Value Engine is about creating a long-term asset:</strong> GCCs that accelerate product and platform roadmaps, lift operational performance, and unlock meaningful cost advantage.
+                </li>
+                <li>
+                  <strong className="text-black">Business transformation strategies:</strong> are designed to unlock enterprise reinvention at quantum speed, aligning operational agility with market momentum. 
+                </li>
               </ul>
             </div>
           </div>

@@ -119,7 +119,7 @@ export function Hero() {
 
           {/* Left — anchored bottom-left, grows upward */}
           <Link
-            to="/transformation-capital"
+            to="/what-we-do"
             className="absolute bottom-0 left-0 w-1/2 flex flex-col-reverse backdrop-blur-sm transition-colors duration-400 cursor-pointer no-underline"
             style={{
               background: hoveredCta === "transform" ? "rgba(0,0,0,0.45)" : "rgba(0,0,0,0.35)",
@@ -165,8 +165,7 @@ export function Hero() {
             >
               <div className="px-14 pt-8 pb-5">
                 <p className="text-white/75 text-lg leading-relaxed max-w-xs">
-                  Empowering Global Enterprises to Build Strategic Hubs in India
-                </p>
+                We turn complex change into concrete results you can measure, scale, and trust – from strategy on paper to real shifts in how your business runs, competes, and grows.                </p>
                 <span className="inline-flex items-center gap-1.5 mt-5 text-white/55 text-xs tracking-widest uppercase">
                   Discover more <ArrowUpRight className="w-3 h-3" />
                 </span>
@@ -176,7 +175,7 @@ export function Hero() {
 
           {/* Right — anchored bottom-right, grows upward */}
           <Link
-            to="/resources"
+            to="/about"
             className="absolute bottom-0 right-0 w-1/2 flex flex-col-reverse backdrop-blur-sm transition-colors duration-400 cursor-pointer no-underline"
             style={{
               background: hoveredCta === "resources" ? "rgba(0,0,0,0.40)" : "rgba(0,0,0,0.28)",
@@ -205,7 +204,7 @@ export function Hero() {
                   }}
                 />
                 <span className="text-white text-3xl tracking-wide">
-                Who We Are
+                Insights, frameworks etc
                 </span>
               </div>
             </span>
@@ -220,8 +219,8 @@ export function Hero() {
               }}
             >
               <div className="px-14 pt-8 pb-5">
-                <p className="text-white/75 text-lg leading-relaxed max-w-xs">
-                  Insights, frameworks and thought leadership to sharpen your edge — curated to inform your next digital move and accelerate your journey.
+                <p className="text-white/75 text-lg leading-relaxed max-w-lg">
+                We are global outcome-driven transformation partner that helps ambitious organisations turn organisational transformation and innovative business models into exceptional growth powered by technology transformation.
                 </p>
                 <span className="inline-flex items-center gap-1.5 mt-5 text-white/55 text-xs tracking-widest uppercase">
                   Browse resources <ArrowUpRight className="w-3 h-3" />

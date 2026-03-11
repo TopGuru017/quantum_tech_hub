@@ -3,7 +3,6 @@
  */
 import siteLogoImg from "@/assets/site-logo.png";
 import heroVideo from "@/assets/hero_background.mp4";
-import aboutUsImg from "@/assets/about_us.jpg";
 import valueHeroImg from "@/assets/value_hero.jpg";
 import leadershipHeroImg from "@/assets/leadership_hero.jpg";
 import telecomImg from "@/assets/telecom.png";
@@ -13,7 +12,6 @@ import energyImg from "@/assets/energy.png";
 import energyBannerImg from "@/assets/energy_banner.jpg";
 import energyVideo from "@/assets/energy.mp4";
 import softwareImg from "@/assets/software.png";
-import softwareBannerImg from "@/assets/software_banner.jpg";
 import softwareVideo from "@/assets/software.mp4";
 import smartManufacturingImg from "@/assets/smart_manufacturing.png";
 import smartManufacturingBannerImg from "@/assets/manufacturing_banner.jpg";
@@ -71,7 +69,6 @@ export const SITE_LOGO = siteLogoImg;
 
 export const PAGE_HERO_VIDEO = heroVideo;
 
-export const ABOUT_US_HERO = aboutUsImg;
 
 export const VALUE_HERO = valueHeroImg;
 
@@ -85,7 +82,6 @@ export const INDUSTRY_ENERGY = energyImg;
 export const ENERGY_BANNER = energyBannerImg;
 export const ENERGY_VIDEO = energyVideo;
 export const INDUSTRY_SOFTWARE = softwareImg;
-export const SOFTWARE_BANNER = softwareBannerImg;
 export const SOFTWARE_VIDEO = softwareVideo;
 export const INDUSTRY_SMART_MANUFACTURING = smartManufacturingImg;
 export const INDUSTRY_HEALTHCARE = healthcareImg;
