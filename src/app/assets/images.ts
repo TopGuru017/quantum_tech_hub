@@ -32,6 +32,7 @@ import cloudStrategyBannerVideo from "@/assets/cloud_strategy_banner.mp4";
 import globalValueImg from "@/assets/global_value.jpg";
 import globalValueVideo from "@/assets/global_value.mp4";
 import whatWeDoImg from "@/assets/what_we_do.jpg";
+import collaborationVideo from "@/assets/collaboration.mp4";
 import capitalImg from "@/assets/capital.jpg";
 import transformationCapitalVideo from "@/assets/transformation_capital.mp4";
 import sanjayImg from "@/assets/sanjay.png";
@@ -108,6 +109,7 @@ export const GLOBAL_VALUE_VIDEO = globalValueVideo;
 export const WHAT_WE_DO_IMAGE = whatWeDoImg;
 export const CAPITAL_IMAGE = capitalImg;
 export const TRANSFORMATION_CAPITAL_VIDEO = transformationCapitalVideo;
+export const COLLABORATION_VIDEO = collaborationVideo;
 
 export const LEADER_SANJAY = sanjayImg;
 export const LEADER_ALOKNATH = aloknathImg;
